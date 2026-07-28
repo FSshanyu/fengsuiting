@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>陰陽雙庫 · 還債補庫 · 楓燧堂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-dark:   #1a2f1a;
+    --green-mid:    #2e5030;
+    --green-accent: #4a7a4a;
+    --green-light:  #7aaa6a;
+    --gold:         #c8982a;
+    --gold-light:   #f0d080;
+    --bg:           #f5f2ec;
+    --surface:      #ffffff;
+    --text-primary: #1e1c18;
+    --text-body:    #3a3830;
+    --text-muted:   #7a7870;
+    --border:       #e4e0d6;
+    --shadow-sm:    0 1px 4px rgba(0,0,0,0.06), 0 2px 12px rgba(0,0,0,0.04);
+    --shadow-md:    0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+    --shadow-lg:    0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05);
+    --radius-sm:    8px;
+    --radius-md:    14px;
+    --radius-lg:    20px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Noto Sans TC", -apple-system, "PingFang HK", sans-serif;
+    background: var(--bg);
+    color: var(--text-body);
+    font-size: 16px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    background: linear-gradient(160deg, #0e1e0e 0%, #1a3020 35%, #2e5030 65%, #4a7040 100%);
+    padding: 80px 24px 60px;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 80%, rgba(200,152,42,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 80% 20%, rgba(122,170,106,0.10) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; z-index: 1; }
+  .hero-eyebrow {
+    display: inline-block;
+    background: rgba(200,152,42,0.2);
+    border: 1px solid rgba(200,152,42,0.4);
+    color: var(--gold-light);
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-family: "Noto Serif TC", serif;
+  }
+  .hero h1 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    line-height: 1.3;
+    background: linear-gradient(135deg, #fff 30%, var(--gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero .sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.72);
+    margin: 14px auto 0;
+    max-width: 480px;
+    line-height: 1.9;
+  }
+  .hero .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.20);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-top: 20px;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 1px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ── Contact Bar ── */
+  .contact-bar {
+    background: linear-gradient(90deg, #0e1e0e, #1a3020, #0e1e0e);
+    padding: 13px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.80);
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .contact-bar a {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .contact-bar a:hover { color: #fff; }
+  .contact-bar .sep { margin: 0 10px; opacity: 0.3; }
+
+  /* ── Layout ── */
+  .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+
+  section {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--border);
+    animation: fadeUp 0.5s ease both;
+  }
+  section:last-of-type { border-bottom: none; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Typography ── */
+  h2 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+  }
+  h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 48px;
+    height: 2px;
+    background: var(--green-accent);
+    border-radius: 2px;
+  }
+  h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green-mid);
+    margin: 24px 0 10px;
+    padding-left: 10px;
+    border-left: 3px solid var(--green-accent);
+  }
+  h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green-mid);
+    margin: 16px 0 8px;
+  }
+  p { font-size: 15px; margin-bottom: 14px; color: var(--text-body); line-height: 1.9; }
+
+  /* ── Highlight Box ── */
+  .highlight-box {
+    background: linear-gradient(135deg, #eef7ee, #f5faf5);
+    border-left: 3px solid var(--green-accent);
+    padding: 16px 20px;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin: 16px 0;
+    box-shadow: var(--shadow-sm);
+  }
+  .highlight-box p { margin-bottom: 5px; font-size: 13.5px; color: #2a4a2a; line-height: 1.8; }
+
+  /* ── Concept Card ── */
+  .concept-card {
+    background: var(--surface);
+    border-radius: var(--radius-md);
+    padding: 24px 26px;
+    margin: 20px 0;
+    box-shadow: var(--shadow-md);
+    border-top: 3px solid var(--green-accent);
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+  .concept-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .concept-card .cc-title {
+    font-family: "Noto Serif TC", serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ── Benefit Box ── */
+  .benefit-box {
+    background: var(--surface);
+    border-radius: var(--radius-md);
+    padding: 20px 22px;
+    margin: 16px 0;
+    border-left: 4px solid var(--green-accent);
+    box-shadow: var(--shadow-md);
+  }
+  .benefit-box .b-head {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .benefit-box .b-effect { font-size: 14px; color: var(--text-primary); margin-bottom: 8px; font-weight: 500; line-height: 1.8; }
+  .benefit-box .b-how { font-size: 13px; color: var(--text-muted); margin-bottom: 0; line-height: 1.8; }
+
+  /* ── Step List ── */
+  .step-list { list-style: none; padding: 0; margin: 16px 0; }
+  .step-list li {
+    padding: 12px 0 12px 32px;
+    position: relative;
+    font-size: 14px;
+    color: var(--text-body);
+    line-height: 1.8;
+  }
+  .step-list li + li { border-top: 1px dashed var(--border); }
+  .step-list li::before {
+    content: '';
+    position: absolute;
+    left: 9px; top: 50%;
+    transform: translateY(-50%);
+    width: 8px; height: 8px;
+    background: var(--green-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(74,122,74,0.15);
+  }
+  .step-list li::after {
+    content: '';
+    position: absolute;
+    left: 12px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(74,122,74,0.3), rgba(74,122,74,0.05));
+  }
+  .step-list li:last-child::after { display: none; }
+  .step-list li strong { color: var(--green-dark); }
+
+  /* ── Must List (Grid Cards) ── */
+  .must-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .must-item {
+    background: var(--surface);
+    padding: 18px 14px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .must-item:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .must-item .m-icon { font-size: 30px; display: block; margin-bottom: 8px; }
+  .must-item .m-title { font-weight: 700; color: var(--green-dark); font-size: 14px; margin-bottom: 6px; }
+  .must-item .m-desc { font-size: 12px; color: var(--text-muted); line-height: 1.7; }
+
+  /* ── FAQ ── */
+  .faq-item {
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    margin: 10px 0;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .faq-q {
+    font-weight: 600;
+    color: var(--green-dark);
+    font-size: 14px;
+    padding: 14px 18px;
+    cursor: default;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.6;
+  }
+  .faq-q::before {
+    content: 'Q';
+    flex-shrink: 0;
+    background: var(--green-accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-top: 1px;
+  }
+  .faq-a {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    padding: 0 18px 14px 38px;
+    line-height: 1.85;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: linear-gradient(160deg, #0e1e0e 0%, #1a3020 50%, #2e5030 100%);
+    margin: 0;
+    padding: 60px 24px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(200,152,42,0.10) 0%, transparent 70%);
+  }
+  .cta-section h2 {
+    color: #fff;
+    border-bottom: none;
+    font-size: 24px;
+    font-family: "Noto Serif TC", serif;
+    justify-content: center;
+    position: relative;
+  }
+  .cta-section h2::after { display: none; }
+  .cta-section p { color: rgba(255,255,255,0.82); font-size: 15px; margin: 12px 0 0; position: relative; line-height: 2; }
+  .cta-section .btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #fff 0%, #f0ede6 100%);
+    color: var(--green-dark);
+    padding: 15px 48px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 24px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    transition: transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.5px;
+  }
+  .cta-section .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(0,0,0,0.30); }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    padding: 28px 20px;
+    font-size: 12px;
+    color: var(--text-muted);
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    line-height: 2;
+  }
+  .footer a { color: var(--green-accent); text-decoration: none; }
+
+  /* ── Divider ── */
+  .section-divider {
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--green-accent), transparent);
+    margin: 0 0 20px;
+    border-radius: 2px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 26px; letter-spacing: 2px; }
+    .hero { padding: 60px 20px 48px; }
+    .must-list { grid-template-columns: 1fr; }
+    h2 { font-size: 18px; }
+    .cta-section { padding: 48px 20px; }
+  }
+</style>
+<script src="https://beacon.cdn.qq.com/sdk/4.5.9/beacon_web.min.js"></script>
+<script>
+(function(){
+  try{
+    var beacon=new BeaconAction({
+      appkey:'0WEB06U85YBSLJNL',
+      versionCode:'1.0.0',
+      channelID:'share',
+      delay:1000,
+      sessionDuration:30*60*1000,
+      isOversea:false,
+      needReportRqdEvent:false
+    });
+    beacon.onDirectUserAction('preview_page_view',{
+      'url':location.href,
+      'referrer':document.referrer,
+      'title':document.title,
+      'sandbox_id':'f910eed0be3d450885ab268a1563095c'
+    });
+  }catch(e){}
+})();
+</script></head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">楓 燧 堂 · 正 統 道 教</div>
+    <h1>陰陽雙庫 · 還債補庫</h1>
+    <div class="sub">先清先天債務，再補財庫根基——還受生債 + 補財庫完整介紹</div>
+    <div class="badge">🏛️ 正統道教 · 高功法師 · 疏文上表</div>
+  </div>
+</div>
+
+<div class="contact-bar">
+  📲 用WhatsApp聯繫：<a href="https://wa.me/85247435153">+852 4743 5153</a>（山羽師兄）
+</div>
+
+<div class="container" style="padding-top:24px;">
+
+<div style="background:#fff;border-radius:14px;padding:20px 24px;margin:0 0 24px;box-shadow:0 2px 12px rgba(42,74,42,0.07);text-align:center;">
+  <p style="font-size:16px;margin-bottom:6px;color:#2d2a24;">
+    🙏 緣主你好，我係<strong>山羽</strong>，係<strong>楓燧堂</strong>嘅師兄，跟隨楓燧大師兄多年，專研八字命理。
+  </p>
+  <p style="font-size:15px;color:#888;margin-bottom:0;">
+    如果你想了解自己欠幾多受生債、或者財庫狀態，<br>睇完介紹之後回覆我「<strong>已看完</strong>」，我幫你查。
+  </p>
+</div>
+
+<!-- ===== 一、活動背景 ===== -->
+<section>
+  <h2>📜 活動背景</h2>
+  <p>每個人出生時都自帶兩個神秘賬戶，稱為 <strong>「陰陽兩庫」</strong>，與一生的財富、運勢息息相關。</p>
+
+  <div class="concept-card">
+    <div class="cc-title">🌑 陰庫 —— 受生債</div>
+    <p>從傳統文化嘅角度嚟講，我哋可以理解「受生債」係每個人嚟到呢個世界時，為咗獲得基本嘅人生基礎而同無形層面結下嘅一種緣分。就好似我哋開始一段新旅程，都需要一些基本嘅配備。</p>
+    <div class="highlight-box">
+      <p><strong>點解要關注？</strong> 如果呢種緣分未有妥善理順，就好似行路時鞋帶冇綁好，或者背住一個自己唔記得咗、但確實存在嘅包袱。佢唔會即時令你跌倒，但會喺無形中令你行得冇咁順暢。</p>
+    </div>
+  </div>
+
+  <div class="concept-card">
+    <div class="cc-title">☀️ 陽庫 —— 財庫</div>
+    <p>陽庫則指掌管一生嘅 <strong>財庫</strong>。依《雲笈七籤》「天庫納福祿，地庫存基業，水庫聚財源」之說，財庫由天地水三庫組成，分別掌管福報、財祿與功德。</p>
+    <div class="highlight-box">
+      <p><strong>財庫空虛會點？</strong> 易現財運不聚、破財頻發之象。《道藏》有云：「人之運途，財祿皆有定數，先天財庫不足，或後天損耗過甚，則財路阻塞。」</p>
+    </div>
+  </div>
+
+  <p>陰陽兩庫若未及時調理，財運難以亨通。陰庫未填還者，運勢多阻滯，常見付出努力卻財運不濟；陽庫未填補者，易陷賺多存少困局，甚至錢財流失。故須由高功法師依醮儀同步進行祈福——<strong>先清還受生債疏通命途，再補足三庫開啟財源</strong>。</p>
+</section>
+
+<!-- ===== 二、陰庫 · 受生債 ===== -->
+<section>
+  <h2>🌑 陰庫 · 受生債</h2>
+
+  <h3>點解要還受生債？</h3>
+  <p>如果呢種緣分未有妥善理順，你可能會覺得——明明自己好努力，但財運總係差啲、事業成日卡住、搵到錢但留唔住、人際關係無端端有阻滯，甚至個人精神狀態成日覺得攰、做咩都提唔起勁。呢啲唔係你運氣唔好，而係有無形嘅嘢喺度消耗緊你嘅福報。</p>
+
+  <div class="benefit-box">
+    <div class="b-head"><span>🔑</span>理順受生債對全面運勢嘅意義</div>
+    <div class="b-effect">👉 主動去理順同處理好「受生債」呢個課題，就好似為自己嘅人生旅程做一次前期嘅整理同準備。當呢個基礎層面變得更加通暢，你喺現實生活中去經營錢財、事業、感情、家庭，以至個人身心平衡各方面時，感受到嘅阻滯感同消耗就有機會減輕，讓你自身嘅努力同才能可以更有效、更順暢地發揮出嚟。</div>
+    <div class="b-how">我哋經常講「輕裝上陣」。處理受生債，從某種意義上講，就係一種「輕裝」嘅預備。佢唔係一種即時變好嘅魔法，而係一種為自己創造更順暢內在環境嘅傳統智慧。</div>
+  </div>
+
+  <h3>正規還受生債流程</h3>
+  <p>還受生債唔係簡簡單單燒個元寶就搞得掂，需要喺正規道觀由高功法師進行一系列科儀：</p>
+  <ul class="step-list">
+    <li><strong>① 查數</strong> — 以生辰八字批算，查清所欠債務及歸屬曹官</li>
+    <li><strong>② 寫疏文</strong> — 按照正統道教規制籌備祈福疏文</li>
+    <li><strong>③ 祈福上表</strong> — 喺祖師爺面前上表稟告償還</li>
+    <li><strong>④ 誦經填還</strong> — 誦祿庫受生經，正式填還祈福</li>
+    <li><strong>⑤ 焚表化寶</strong> — 根據償還袋數焚燒元寶，完成還債</li>
+  </ul>
+
+  <div class="highlight-box">
+    <p>💡 <strong>受生債還可以多還。</strong> 多出嘅元寶會轉為還其他陰債，或者變成功德儲備，等於開個「福報戶口」，將來遇大事可擋災。</p>
+  </div>
+
+  <h4>🎥 法會視頻參考</h4>
+  <p style="font-size:14px;color:#888;">以下係受生債法會部分視頻，可供參考：</p>
+  <p style="font-size:14px;margin-bottom:4px;">
+    📹 <strong>馬來關帝觀音廟五月廿八還受生債祈福法會（部分視頻）</strong><br>
+    <a href="https://img-fe.seersecret.com/file/311582fd-033b-47e8-82b2-92985c64734f.mp4" target="_blank" style="color:#4a7a4a;word-break:break-all;">https://img-fe.seersecret.com/file/311582fd-033b-47e8-82b2-92985c64734f.mp4</a>
+  </p>
+  <p style="font-size:14px;margin-bottom:4px;">
+    📹 <strong>7.3 受生債香港玉霞閣（第一場）</strong><br>
+    <a href="https://img-fe.seersecret.com/file/34907e18-fcc3-4388-8cc0-ecf541e45fbc.mp4" target="_blank" style="color:#4a7a4a;word-break:break-all;">https://img-fe.seersecret.com/file/34907e18-fcc3-4388-8cc0-ecf541e45fbc.mp4</a>
+  </p>
+  <p style="font-size:13px;color:#aaa;">*部分視頻僅供參考，完整版會於法會後提供</p>
+</section>
+
+<!-- ===== 三、陽庫 · 補財庫 ===== -->
+<section>
+  <h2>☀️ 陽庫 · 補財庫</h2>
+
+  <h3>何為財庫？</h3>
+  <p>還受生債叫做陰庫，而陽庫指嘅係我哋呢個世界一生嘅 <strong>財庫</strong>。依《雲笈七籤》「天庫納福祿，地庫存基業，水庫聚財源」之說，財庫由「天地水」三庫組成，分別掌管福報、財祿與功德。若財庫虛空，則財運不聚，破財頻發。</p>
+
+  <p>簡單理解：財庫就好比銀行卡同保險箱——</p>
+  <div style="background:#fff;border-radius:10px;padding:16px 20px;margin:12px 0;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
+    <p>😄 <strong>自帶財庫：</strong>財富上限高，搵錢相對輕鬆容易</p>
+    <p>🙁 <strong>不帶財庫：</strong>冇保險箱，財富上限低</p>
+    <p>🥹 <strong>財庫有漏：</strong>搵到錢也會莫名其妙被迫開銷，存唔住</p>
+  </div>
+  <p>所以八字財庫關乎我哋一生財富狀態同財富上限。老話講：「要想富睇財庫」——財運象徵一個人賺錢嘅能力，而財庫就代表能否守住財運，兩者相輔相成，缺一不可。有財冇庫，就算賺到錢，都會好快失去。</p>
+
+  <h3>各日主財庫對照</h3>
+  <div style="background:#fff;border-radius:10px;padding:14px 18px;margin:12px 0;box-shadow:0 1px 4px rgba(0,0,0,0.05);font-size:14px;line-height:1.9;">
+    <p>甲乙日主嘅財庫係 <strong>戌</strong><br>
+    丙丁日主嘅財庫係 <strong>丑</strong><br>
+    庚辛日主嘅財庫係 <strong>未</strong><br>
+    壬癸日主嘅財庫係 <strong>戌</strong><br>
+    戊己日主嘅財庫係 <strong>辰</strong></p>
+  </div>
+  <p>每個人命盤中財庫嘅狀態都唔同——有啲人有庫但庫破，有啲人冇庫需要開，有啲人庫太細需要擴充。需要透過八字批算先知道屬於邊種情況。</p>
+
+  <h3>點解要補財庫？</h3>
+  <p>財庫好似我哋嘅銀行卡，主要起到存儲嘅作用。人嘅財富要搵得多，更要守得住——<strong>守得住比賺得多更重要</strong>。而家正值九紫離火運期間，能量轉換劇烈，財運波動本來就較大。如果你喺呢個階段把握唔住自己嘅財運，就算踩喺風口上，都係冇用嘅。</p>
+
+  <div class="benefit-box">
+    <div class="b-head"><span>💰</span>補財庫對你有咩用？</div>
+    <div class="b-effect">👉 有財運但守唔住財富，總會因為各種意外情況破財——呢啲都喺度提醒你：需要補開財庫喇。補財庫就係幫你將個「錢罌」整靚佢，等啲錢入到嚟可以留得住。</div>
+    <div class="b-how">高功法師會依《靈寶濟度玄科》開壇演法，焚化天地水錢補庫，進呈三官大帝疏文調和財炁，更以五色靈幡鎮守八方財門，斬斷小人破財煞。</div>
+  </div>
+
+  <h3>天地水三庫 —— 財庫嘅三個層面</h3>
+  <p>財神趙公明掌財源同財庫，三官大帝分管財庫其中天、地、水三庫：</p>
+  <div class="must-list">
+    <div class="must-item">
+      <span class="m-icon">🌌</span>
+      <div class="m-title">天庫</div>
+      <div class="m-desc">代表本命財源<br>掌管你一生嘅福報財運</div>
+    </div>
+    <div class="must-item">
+      <span class="m-icon">🌍</span>
+      <div class="m-title">地庫</div>
+      <div class="m-desc">代表事業財源<br>掌管你嘅基業同生意</div>
+    </div>
+    <div class="must-item">
+      <span class="m-icon">🌊</span>
+      <div class="m-title">水庫</div>
+      <div class="m-desc">代表流動財源<br>掌管投資、偏財等流動資金</div>
+    </div>
+  </div>
+  <p>補庫除咗要向財神趙公明祈福，最好係同時向三官大帝填充三庫空缺。只有三庫充盈，先可以真正財源廣進、進而不漏。</p>
+
+  <h3>四類人必須補財庫</h3>
+  <div class="must-list">
+    <div class="must-item">
+      <span class="m-icon">🕳️</span>
+      <div class="m-title">財庫有漏洞</div>
+      <div class="m-desc">經常破財、漏財，錢到手就好快冇咗</div>
+    </div>
+    <div class="must-item">
+      <span class="m-icon">📦</span>
+      <div class="m-title">財庫容量細</div>
+      <div class="m-desc">有能力搵錢，但去到某個程度就因為意外花晒</div>
+    </div>
+    <div class="must-item">
+      <span class="m-icon">🏗️</span>
+      <div class="m-title">有庫無財</div>
+      <div class="m-desc">庫夠大但賺唔到錢，事業運無法提升</div>
+    </div>
+    <div class="must-item">
+      <span class="m-icon">🚫</span>
+      <div class="m-title">命中無庫</div>
+      <div class="m-desc">命盤中冇財庫，錢財容易流失，同錢無緣</div>
+    </div>
+  </div>
+
+  <h3>正規補財庫流程</h3>
+  <p>補財庫唔可以自己填補。財庫係由天地水庫組成，需要通過正規法事先可以完成——無法師敕令，元寶錢財係好難入庫：</p>
+  <ul class="step-list">
+    <li><strong>① 查庫</strong> — 按生辰推算財庫狀態，睇吓有冇缺庫、庫破、庫穿等問題</li>
+    <li><strong>② 寫疏文</strong> — 撰寫正統補庫表文，列明祈福人資料同上稟內容</li>
+    <li><strong>③ 疏財門</strong> — 焚疏重開納財門戶，打開財路通道</li>
+    <li><strong>④ 補財庫</strong> — 以補庫法門補天地水三庫，完整修補</li>
+    <li><strong>⑤ 鎮財庫</strong> — 稟請神明鎮守防漏，穩固財庫唔再流失</li>
+  </ul>
+
+  <h4>🎥 法會視頻參考</h4>
+  <p style="font-size:14px;color:#888;">以下係補財庫法會部分視頻，可供參考：</p>
+  <p style="font-size:14px;margin-bottom:4px;">
+    📹 <strong>馬來關帝觀音廟五月廿八補財庫祈福法會（部分視頻）</strong><br>
+    <a href="https://img-fe.seersecret.com/file/311582fd-033b-47e8-82b2-92985c64734f.mp4" target="_blank" style="color:#4a7a4a;word-break:break-all;">https://img-fe.seersecret.com/file/311582fd-033b-47e8-82b2-92985c64734f.mp4</a>
+  </p>
+  <p style="font-size:14px;margin-bottom:4px;">
+    📹 <strong>7.3 補財庫香港玉霞閣（第一場）</strong><br>
+    <a href="https://img-fe.seersecret.com/file/6b6a9ee4-8362-4bb5-819b-276d10b79c53.mp4" target="_blank" style="color:#4a7a4a;word-break:break-all;">https://img-fe.seersecret.com/file/6b6a9ee4-8362-4bb5-819b-276d10b79c53.mp4</a>
+  </p>
+  <p style="font-size:13px;color:#aaa;">*部分視頻僅供參考，完整版會於法會後提供</p>
+</section>
+
+<!-- ===== 四、陰陽雙庫嘅關係 ===== -->
+<section>
+  <h2>🔄 陰陽雙庫嘅關係</h2>
+  <div class="highlight-box">
+    <p><strong>道教秘法：「先清債，後補庫」</strong></p>
+  </div>
+  <p>陰陽兩庫法事係相繼進行嘅——由高功道長依照醮儀分別開啟：</p>
+  <ul class="step-list">
+    <li><strong>第一步：填還陰庫（受生債）</strong> — 清償過往帳單，疏通命途，消除運勢阻滯</li>
+    <li><strong>第二步：補足陽庫（補財庫）</strong> — 充盈天地水三庫，開啟財富通道，等啲錢入到嚟可以留得住</li>
+  </ul>
+  <p>如果陰庫未還就補陽庫，就好似間屋嘅地基未打穩就開始裝修——做咗都效果有限。所以正確嘅順序係 <strong>先還受生債，再補財庫</strong>，咁樣先係完整嘅財運調理。</p>
+  <div class="highlight-box">
+    <p>💡 <strong>陰庫填還</strong> 可預存「寄庫錢」抵銷業障。<br>
+    💡 <strong>陽庫補足</strong> 就如福田中嘅種子——係為個人財運開端，唔係終點。可以定期重複栽培，多啲養分先有機會開出真正財富花朵。</p>
+  </div>
+</section>
+
+<!-- ===== 元辰燈 ===== -->
+<section>
+  <h2>🪔 本命元辰燈</h2>
+
+  <div class="concept-card" style="border-left-color:#d4a020;">
+    <div class="cc-title">✨ 元辰燈係咩？</div>
+    <p>本命元辰可以理解為每個人嘅能量基礎，道教典籍記載元辰星嘅光暗同福祿運勢係互相呼應嘅。就好似一盞油燈，如果火頭唔小心畀風吹熄咗，成個空間黑麻麻，好容易搞到判斷失準。元辰光猛明亮，自然萬事順景；元辰星暗啞，就樣樣衰收尾。</p>
+    <p>本命元辰嘅狀態係運勢嘅根基！當元辰能量唔夠勁，就算好運喺面前都未必捉得實；相反，元辰能量夠晒旺，再配合其他祈福調理，效果自然更上一層樓。就好似有啲緣主參加同一場補財庫祈福，有人覺得好靈驗，有人就感覺普通，其實好大程度同佢哋「元辰底子」有關係——就好似一個水桶，夠大夠實淨，先可以裝多啲水；如果本身有裂崩崩，就算裝到水都會慢慢漏走晒！</p>
+  </div>
+
+  <div class="highlight-box" style="border-left-color:#d4a020;">
+    <p><strong>點樣運作？</strong> 師兄會將盞燈擺喺法壇上面，法事過程中一直點住，道長同時會唸到你個名，幫你掃走元辰晦氣，讓本命星辰光芒重現、元神光彩煥發。</p>
+    <p><strong>配合效果：</strong> 路同燈齊全，整個安排會更加完整。</p>
+    <p style="font-size:14px;color:#888;margin-top:8px;">🌱 世間無一勞永逸之事，供養元辰燈如同充電——助你平穩渡過低潮，順境時加倍助力。</p>
+  </div>
+
+  <div style="background:#fff;border-radius:14px;padding:18px 20px;margin:16px 0;box-shadow:0 2px 12px rgba(212,160,32,0.1);">
+
+    <h4 style="font-size:16px;color:#8a6a1a;margin-bottom:12px;">💡 元辰燈選擇</h4>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
+      <div style="flex:1;min-width:160px;background:#fefcf5;border-radius:10px;padding:14px;text-align:center;border:1px solid #f5e8c8;">
+        <div style="font-size:22px;font-weight:700;color:#8a6a1a;">2盞</div>
+        <div style="font-size:14px;font-weight:600;color:#5a4a2a;">點亮元神</div>
+        <div style="font-size:13px;color:#888;">HK$788</div>
+        <div style="font-size:12px;color:#aaa;margin-top:4px;">入門嘗試</div>
+      </div>
+      <div style="flex:1;min-width:160px;background:#fefcf5;border-radius:10px;padding:14px;text-align:center;border:1px solid #d4a020;">
+        <div style="font-size:22px;font-weight:700;color:#8a6a1a;">3盞</div>
+        <div style="font-size:14px;font-weight:600;color:#5a4a2a;">三寶元辰</div>
+        <div style="font-size:13px;color:#888;">HK$1,088</div>
+        <div style="font-size:12px;color:#aaa;margin-top:4px;">🔥 最多人揀嘅入門</div>
+      </div>
+      <div style="flex:1;min-width:160px;background:#fefcf5;border-radius:10px;padding:14px;text-align:center;border:1px solid #f5e8c8;">
+        <div style="font-size:22px;font-weight:700;color:#8a6a1a;">7盞</div>
+        <div style="font-size:14px;font-weight:600;color:#5a4a2a;">北斗七星</div>
+        <div style="font-size:13px;color:#888;">HK$2,688</div>
+        <div style="font-size:12px;color:#aaa;margin-top:4px;">全面提升</div>
+      </div>
+      <div style="flex:1;min-width:160px;background:#fefcf5;border-radius:10px;padding:14px;text-align:center;border:2px solid #d4a020;">
+        <div style="font-size:22px;font-weight:700;color:#c9405a;">12盞</div>
+        <div style="font-size:14px;font-weight:600;color:#5a4a2a;">十二元辰</div>
+        <div style="font-size:13px;color:#888;">HK$3,888</div>
+        <div style="font-size:12px;color:#c9405a;margin-top:4px;">🔥 性價比之選</div>
+      </div>
+      <div style="flex:1;min-width:160px;background:#fefcf5;border-radius:10px;padding:14px;text-align:center;border:1px solid #f5e8c8;">
+        <div style="font-size:22px;font-weight:700;color:#8a6a1a;">28盞</div>
+        <div style="font-size:14px;font-weight:600;color:#5a4a2a;">本命元辰</div>
+        <div style="font-size:13px;color:#888;">HK$8,888</div>
+        <div style="font-size:12px;color:#aaa;margin-top:4px;">深度淨化</div>
+      </div>
+    </div>
+
+    <p style="font-size:14px;color:#666;text-align:center;margin-bottom:0;">
+      如果第一次試，可以揀<strong>3盞（$1,088）</strong>穩固基礎；如果想效果更理想，<strong>12盞（$3,888）</strong>係最多人揀，性價比最高🙏
+    </p>
+  </div>
+
+  <div class="highlight-box" style="border-left-color:#d4a020;">
+    <p><strong>配合建議：</strong></p>
+    <p>💡 <strong>受生債 + 元辰燈</strong> — 清路障嘅同時為本命元辰充電，讓清出嚟嘅路更加明亮</p>
+    <p>💡 <strong>補財庫 + 元辰燈</strong> — 加固錢箱嘅同時提升元辰能量，等財氣入庫效果更理想</p>
+    <p>💡 <strong>受生債 + 補財庫 + 元辰燈</strong> — 三管齊下，最完整嘅財運調理組合</p>
+  </div>
+</section>
+
+<!-- ===== 五、趙公明財神介紹 ===== -->
+<section>
+  <h2>🏮 趙公明財神</h2>
+  <p>道教中，財神係掌管天下財源和祿庫嘅星君。據《財神真經》記載，<strong>趙公明為五方五路財神元帥</strong>，掌管天下財庫，素有「華夏第一正財神」之稱。東西南北中，出門走五路，皆可得錢財，象徵能給天下百姓帶來財富。</p>
+  <p>三官大帝則分別掌管財庫中嘅天庫、地庫、水庫——天官賜福、地官赦罪、水官解厄。補庫需要同時向天地水庫進行補給，先可以完整。</p>
+</section>
+
+<!-- ===== 六、常見問題 ===== -->
+<section>
+  <h2>❓ 常見問題</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">點知自己需要還幾多受生債？</div>
+    <div class="faq-a">需要提供你嘅生辰信息，根據八字進行排盤計算，睇下所欠受生債係幾多、需要還俾邊個曹官。所欠元寶會根據你嘅生辰天干、生肖進行查詢。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">唔還受生債影響大唔大？</div>
+    <div class="faq-a">受生債係運勢改變嘅地基——地基唔穩就難以起樓。當你想幫自己轉運（財運、事業運、姻緣），都會好難有起色，因為有債務限制你。時間越耐對個人運勢影響越大。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">平時冇特別感覺，係咪代表冇影響？</div>
+    <div class="faq-a">如果你本身有福報、功德、時運相抵消，會覺得運勢一般般，唔算太差。但一旦福報功德時運一過，運勢就會阻礙繁多。所以建議盡快還，無債一身輕。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">還完受生債之後運勢就會變好嗎？</div>
+    <div class="faq-a">還完受生債後並非一勞永逸。受生債只係償還自身所欠嘅債，減少業障和運勢阻礙，恢復氣韻平穩。比較建議還清後再補財庫調理財運，調運才能通暢無阻。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">我之前做過受生債，再做補財庫有用嗎？</div>
+    <div class="faq-a">如果你受生債已經還完，再做補財庫效果會更加好。如果未還完，可以今次一次過還完再補財庫，對你嘅運勢同財運都非常有幫助。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">受生債／補財庫儀式需要我親自到場參加嗎？</div>
+    <div class="faq-a">唔需要親身到場㗎。你報名之後，師兄會幫你準備好疏文同相關用品。道長喺儀式當日會幫你上表疏文、稟告神明、焚化元寶——成個過程都係以你嘅名義進行，疏文上寫有你嘅姓名、生辰同住址，等於你本人參與。儀式全程會有完整影片記錄俾你睇返，包括疏文內容、道長讀名、上表、化寶等過程。無論你喺唔喺現場，都唔會影響儀式嘅作用，你放心就得🙏</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">點樣知道有冇幫我做？</div>
+    <div class="faq-a">祈福當日師兄會錄製全程，整理好後會將疏文照片與視頻一併回饋給你。祈福過程道長會唸到你嘅名字，整理時亦會加上字幕，方便你查閱。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">我可以自己補財庫嗎？</div>
+    <div class="faq-a">補財庫唔可以自己填補。財庫係由天地水庫組成，需要通過正規法事先可以完成財庫補充。無法師敕令，元寶錢財好難入庫，反而容易被附近野鬼搶錢。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">開財庫嘅好處係咩？</div>
+    <div class="faq-a">每一個人都有財庫，儲存著一生嘅財富。財庫有一扇門，如果冇打開，就如同與財源有一道阻隔，難以獲取財運或積累財富。開財庫嘅目的係打開財富之門，同財運相通，讓庫慢慢入財。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">補財庫係咪做一次就夠？</div>
+    <div class="faq-a">補財庫就好似福田中嘅種子，係個人財運嘅開端，唔係終點。就如理財戶口需要定期增值一樣，可以多次重複栽培，多啲養分先有機會開出真正財富花朵。</div>
+  </div>
+</section>
+
+</div>
+
+<div class="cta-section">
+  <h2>🙏 睇完未？</h2>
+  <p>如果你已經睇晒以上介紹，想了解自己欠幾多受生債——<br><strong>回覆「已看完」，師兄幫你查自身欠幾多受生債以及數量。</strong></p>
+  <div class="btn">💬 回覆「已看完」</div>
+</div>
+
+<div class="footer">
+  <div style="font-size:18px;margin-bottom:6px;">🏛️</div>
+  <div style="font-weight:600;color:#3a5a3a;font-size:13px;letter-spacing:1px;">楓燧堂 · 陰陽雙庫還債補庫</div>
+  <div style="margin-top:6px;">如有任何疑問，歡迎隨時 <a href="https://wa.me/85247435153">WhatsApp 查詢</a></div>
+</div>
+
+</body>
+</html>

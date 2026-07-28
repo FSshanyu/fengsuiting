@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>楓燧堂 · 全部法會一覽</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Noto Sans HK", "PingFang HK", sans-serif;
+    background: #f5f0eb;
+    color: #2d2a24;
+    font-size: 16px;
+    line-height: 1.8;
+    padding-bottom: 60px;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #1a0a2e 0%, #4a1a5e 50%, #6a2a7e 100%);
+    padding: 50px 24px 40px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(180,130,220,0.1) 0%, transparent 60%),
+                radial-gradient(circle at 70% 30%, rgba(255,200,150,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero .logo-icon { font-size: 40px; display: block; margin-bottom: 10px; position: relative; }
+  .hero h1 { font-size: 24px; font-weight: 800; position: relative; letter-spacing: 1px; }
+  .hero p { font-size: 14px; opacity: 0.8; margin-top: 6px; position: relative; }
+
+  .container { max-width: 680px; margin: 0 auto; padding: 0 16px; }
+
+  /* 分類標題 */
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 28px 16px 14px;
+    padding-left: 12px;
+    border-left: 4px solid #6a4a8e;
+    color: #2d2a24;
+  }
+  .section-title .small { font-size: 13px; font-weight: 400; color: #999; display: block; margin-top: 2px; }
+
+  /* Product Card - Horizontal */
+  .prod-card {
+    display: block;
+    background: #fff;
+    border-radius: 14px;
+    margin: 12px 16px;
+    padding: 18px 18px 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s, box-shadow 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .prod-card:active { transform: scale(0.98); }
+
+  .prod-card .card-color-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+  }
+
+  .prod-card .card-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .prod-card .card-icon {
+    font-size: 28px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .prod-card .card-info { flex: 1; min-width: 0; }
+  .prod-card .card-name {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .prod-card .card-sub {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 6px;
+  }
+  .prod-card .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+  .prod-card .tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: #f5f0eb;
+    color: #666;
+  }
+  .prod-card .tag.hot { background: #fef0f0; color: #c9405a; }
+  .prod-card .tag.new { background: #e8f0e8; color: #3a7a3a; }
+  .prod-card .tag.gold { background: #fff6e0; color: #b8860b; }
+  .prod-card .tag.purple { background: #f0eaf6; color: #6a4a8e; }
+
+  .prod-card .card-arrow {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  /* 顏色主題 */
+  .c-gold .card-color-bar { background: linear-gradient(90deg, #b8860b, #daa520, #b8860b); }
+  .c-gold .card-icon { background: #fff6e0; }
+  .c-red .card-color-bar { background: linear-gradient(90deg, #c9405a, #e06070, #c9405a); }
+  .c-red .card-icon { background: #fef0f0; }
+  .c-blue .card-color-bar { background: linear-gradient(90deg, #2d4a6b, #4a7a9e, #2d4a6b); }
+  .c-blue .card-icon { background: #eef4f8; }
+  .c-purple .card-color-bar { background: linear-gradient(90deg, #6a4a8e, #9a6abe, #6a4a8e); }
+  .c-purple .card-icon { background: #f0eaf6; }
+  .c-green .card-color-bar { background: linear-gradient(90deg, #3a7a3a, #5a9a5a, #3a7a3a); }
+  .c-green .card-icon { background: #e8f0e8; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 28px 20px 20px;
+    font-size: 12px;
+    color: #aaa;
+  }
+  .footer .brand { font-size: 14px; color: #6a4a8e; font-weight: 600; margin-bottom: 4px; }
+
+  .contact-bar {
+    background: #2a2a2a;
+    padding: 12px 24px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+  .contact-bar a { color: #b8d5a8; text-decoration: none; }
+  .contact-bar .sep { margin: 0 8px; opacity: 0.4; }
+  body { padding-bottom: 70px; }
+
+  @media (max-width: 400px) {
+    .prod-card { margin: 10px 12px; padding: 14px 14px 12px; }
+  }
+</style>
+<script src="https://beacon.cdn.qq.com/sdk/4.5.9/beacon_web.min.js"></script>
+<script>
+(function(){
+  try{
+    var beacon=new BeaconAction({
+      appkey:'0WEB06U85YBSLJNL',
+      versionCode:'1.0.0',
+      channelID:'share',
+      delay:1000,
+      sessionDuration:30*60*1000,
+      isOversea:false,
+      needReportRqdEvent:false
+    });
+    beacon.onDirectUserAction('preview_page_view',{
+      'url':location.href,
+      'referrer':document.referrer,
+      'title':document.title,
+      'sandbox_id':'7794e67ce39e45beaaaa6759124dc2a7'
+    });
+  }catch(e){}
+})();
+</script></head>
+<body>
+
+<div class="hero">
+  <span class="logo-icon">🏮</span>
+  <h1>楓燧堂 · 全部法會一覽</h1>
+  <p>一站式了解所有祈福服務 · 搵到最啱你嘅選擇</p>
+</div>
+
+<div class="container">
+
+  <!-- ===== 陰陽雙庫 ===== -->
+  <div class="section-title">
+    陰陽雙庫
+    <span class="small">清理債務 · 加固財庫</span>
+  </div>
+
+  <a class="prod-card c-gold" href="https://035ac9b23cfd404d9993436e58dec3be.app.codebuddy.work">
+    <div class="card-color-bar"></div>
+    <div class="card-head">
+      <div class="card-icon">🌑</div>
+      <div class="card-info">
+        <div class="card-name">受生債</div>
+        <div class="card-sub">還清先天陰債 · 掃除無形阻滯</div>
+        <div class="card-tags">
+          <span class="tag hot">🔥 8/15 清揚觀</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-arrow">›</div>
+  </a>
+
+  <a class="prod-card c-gold" href="https://035ac9b23cfd404d9993436e58dec3be.app.codebuddy.work">
+    <div class="card-color-bar"></div>
+    <div class="card-head">
+      <div class="card-icon">💰</div>
+      <div class="card-info">
+        <div class="card-name">補財庫</div>
+        <div class="card-sub">加固財庫根基 · 搵到錢留得住</div>
+        <div class="card-tags">
+          <span class="tag hot">🔥 8/15 清揚觀</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-arrow">›</div>
+  </a>
+
+  <a class="prod-card c-gold" href="https://035ac9b23cfd404d9993436e58dec3be.app.codebuddy.work">
+    <div class="card-color-bar"></div>
+    <div class="card-head">
+      <div class="card-icon">🪔</div>
+      <div class="card-info">
+        <div class="card-name">本命元辰燈</div>
+        <div class="card-sub">點亮元辰 · 為運勢「充電」</div>
+        <div class="card-tags">
+          <span class="tag purple">2盞起 · 可搭配法事加購</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-arrow">›</div>
+  </a>
+
+  <!-- ===== 關煞化解 ===== -->
+  <div class="section-title">
+    關煞化解
+    <span class="small">清理命盤凶煞 · 調和氣場</span>
+  </div>
+
+  <a class="prod-card c-blue" href="https://4796aa501f25499d81a905bec06c414e.app.codebuddy.work">
+    <div class="card-color-bar"></div>
+    <div class="card-head">
+      <div class="card-icon">⚡</div>
+      <div class="card-info">
+        <div class="card-name">百解化煞</div>
+        <div class="card-sub">108道關煞 · 六大分類根源化解</div>
+        <div class="card-tags">
+          <span class="tag">衝財煞</span>
+          <span class="tag">橫災煞</span>
+          <span class="tag">小人煞</span>
+          <span class="tag">駁婚煞</span>
+          <span class="tag">健康煞</span>
+          <span class="tag hot">童子煞</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-arrow">›</div>
+  </a>
+
+  <!-- ===== 五行手鏈 ===== -->
+  <div class="section-title">
+    五行手鏈
+    <span class="small">八字專屬定制 · 道長開光</span>
+  </div>
+
+  <a class="prod-card c-purple" href="https://4722a44180574ffbad608faafcddb94b.app.codebuddy.work">
+    <div class="card-color-bar"></div>
+    <div class="card-head">
+      <div class="card-icon">📿</div>
+      <div class="card-info">
+        <div class="card-name">五行手鏈</div>
+        <div class="card-sub">八字專屬定制 · 調和五行平衡氣場</div>
+        <div class="card-tags">
+          <span class="tag">事業</span>
+          <span class="tag">財運</span>
+          <span class="tag">貴人</span>
+          <span class="tag">婚緣</span>
+          <span class="tag">文昌</span>
+          <span class="tag">健康</span>
+          <span class="tag">平安</span>
+          <span class="tag">子女</span>
+          <span class="tag">親緣</span>
+          <span class="tag hot">高功道長開光</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-arrow">›</div>
+  </a>
+
+  <!-- ===== 法會活動 ===== -->
+  <div class="section-title">
+    法會活動
+    <span class="small">吉日祈福 · 順天應時</span>
+  </div>
+
+  <a class="prod-card c-red" href="https://280ff92855bb4a2190c0c141d38d4ae8.app.codebuddy.work">
+    <div class="card-color-bar"></div>
+    <div class="card-head">
+      <div class="card-icon">🌙</div>
+      <div class="card-info">
+        <div class="card-name">七夕良辰·雙壇祈福法會</div>
+        <div class="card-sub">月老仙師 + 狐僊娘娘合祀 · 求正緣旺人緣</div>
+        <div class="card-tags">
+          <span class="tag hot">🔥 8/19 龍虎山</span>
+          <span class="tag">月老仙師</span>
+          <span class="tag">狐僊娘娘</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-arrow">›</div>
+  </a>
+
+  <a class="prod-card c-green" href="https://280ff92855bb4a2190c0c141d38d4ae8.app.codebuddy.work">
+    <div class="card-color-bar"></div>
+    <div class="card-head">
+      <div class="card-icon">🪷</div>
+      <div class="card-info">
+        <div class="card-name">中元水陸普渡法會</div>
+        <div class="card-sub">龍虎山 · 香港 · 台灣三地合壇 · 冥陽兩利</div>
+        <div class="card-tags">
+          <span class="tag hot">🔥 8/20-9/5 三地</span>
+          <span class="tag">超度積福</span>
+          <span class="tag">冥陽兩利</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-arrow">›</div>
+  </a>
+
+</div>
+
+<div class="footer">
+  <div class="brand">楓燧堂 · 山羽師兄</div>
+  如有任何疑問，歡迎隨時查詢 🙏
+</div>
+
+<div class="contact-bar">
+  WhatsApp聯繫：
+  <a href="https://wa.me/85247435153">+852 4743 5153</a>（山羽師兄）
+</div>
+
+</body>
+</html>
