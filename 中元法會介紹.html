@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>兩岸三地・中元水陸普渡法會 · 楓燧堂</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Noto Sans HK", "PingFang HK", sans-serif;
+    background: #f5f3ef;
+    color: #2d2a24;
+    font-size: 18px;
+    line-height: 2.0;
+  }
+  .hero {
+    background: linear-gradient(135deg, #1a1a3e 0%, #2d4a6b 40%, #6a8fa8 100%);
+    padding: 60px 24px 40px;
+    text-align: center;
+    color: #fff;
+  }
+  .hero h1 { font-size: 26px; font-weight: 700; letter-spacing: 2px; margin-bottom: 8px; }
+  .hero .sub { font-size: 15px; opacity: 0.9; margin-top: 4px; }
+  .hero .date-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-top: 16px;
+  }
+  .contact-bar {
+    background: #1a2a4a;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+  }
+  .contact-bar a { color: #a8c8e8; text-decoration: none; }
+  .contact-bar .sep { margin: 0 8px; opacity: 0.4; }
+
+  .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 40px 0; border-bottom: 1px solid #e0dbd3; }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a3a4a;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #c8d8e0;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a3a4a;
+    margin: 24px 0 10px;
+    padding-left: 12px;
+    border-left: 4px solid #2d4a6b;
+  }
+  h4 { font-size: 15px; font-weight: 600; color: #2a3a4a; margin: 14px 0 6px; }
+  p { font-size: 17px; margin-bottom: 16px; color: #444; }
+
+  .highlight-box {
+    background: linear-gradient(135deg, #f0f6fa 0%, #e8f0f5 100%);
+    border-left: 4px solid #2d4a6b;
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+    margin: 16px 0;
+  }
+  .highlight-box p { margin-bottom: 4px; font-size: 15px; color: #2a3a4a; }
+  .highlight-box p:last-child { margin-bottom: 0; }
+
+  .venue-mini { display: flex; gap: 10px; margin: 16px 0; }
+  .venue-mini-item {
+    flex: 1; background: #fff; border-radius: 12px; padding: 14px 10px;
+    text-align: center; box-shadow: 0 2px 8px rgba(45,74,107,0.1);
+    font-size: 12px; color: #555;
+  }
+  .venue-mini-item .vicon { font-size: 24px; display: block; margin-bottom: 4px; }
+  .venue-mini-item .vname { font-weight: 600; color: #1a3a4a; font-size: 14px; margin-bottom: 2px; }
+
+  /* 方案卡片 - 改進版 */
+  .plan-card {
+    background: #fff;
+    border-radius: 14px;
+    margin: 18px 0;
+    box-shadow: 0 2px 12px rgba(45,74,107,0.08);
+    overflow: hidden;
+  }
+  .plan-header {
+    background: linear-gradient(135deg, #1a3a4a, #2d4a6b);
+    color: #fff;
+    padding: 14px 20px;
+  }
+  .plan-header .p-name { font-size: 17px; font-weight: 700; color: #fff; }
+  .plan-header .p-tag { font-size: 12px; opacity: 0.9; margin-top: 2px; }
+  .plan-body { padding: 16px 20px; }
+  .plan-suit {
+    font-size: 14px;
+    color: #2d4a6b;
+    background: #f0f6fa;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+  .plan-items {
+    font-size: 14px;
+    color: #2a3a4a;
+    background: #fafaf5;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    line-height: 1.7;
+  }
+  .plan-items span { color: #2d4a6b; margin-right: 4px; }
+  .plan-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+  }
+  .plan-desc strong { color: #1a3a4a; }
+
+  .suit-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .suit-tag {
+    background: #fff; border: 1px solid #c8d8e0; padding: 6px 14px;
+    border-radius: 20px; font-size: 13px; color: #1a3a4a;
+  }
+
+  .faq-q { font-weight: 600; color: #1a3a4a; font-size: 15px; margin: 18px 0 6px; }
+  .faq-a { font-size: 14px; color: #666; margin-bottom: 12px; }
+
+  .cta-section {
+    background: linear-gradient(135deg, #1a3a4a, #2d4a6b);
+    margin: 0 -20px; padding: 48px 24px; text-align: center; color: #fff;
+  }
+  .cta-section h2 { color: #fff; border-bottom: none; font-size: 22px; }
+  .cta-section p { color: rgba(255,255,255,0.9); font-size: 15px; }
+  .cta-section .btn {
+    display: inline-block; background: #fff; color: #1a3a4a;
+    padding: 14px 44px; border-radius: 50px; font-size: 17px; font-weight: 700;
+    text-decoration: none; margin-top: 20px;
+  }
+  .footer { text-align: center; padding: 24px 20px; font-size: 12px; color: #aaa; }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 22px; }
+    .venue-mini { flex-direction: column; }
+  }
+</style>
+<script src="https://beacon.cdn.qq.com/sdk/4.5.9/beacon_web.min.js"></script>
+<script>
+(function(){
+  try{
+    var beacon=new BeaconAction({
+      appkey:'0WEB06U85YBSLJNL',
+      versionCode:'1.0.0',
+      channelID:'share',
+      delay:1000,
+      sessionDuration:30*60*1000,
+      isOversea:false,
+      needReportRqdEvent:false
+    });
+    beacon.onDirectUserAction('preview_page_view',{
+      'url':location.href,
+      'referrer':document.referrer,
+      'title':document.title,
+      'sandbox_id':'7794e67ce39e45beaaaa6759124dc2a7'
+    });
+  }catch(e){}
+})();
+</script></head>
+<body>
+
+<div class="hero">
+  <h1>兩岸三地・中元水陸普渡法會</h1>
+  <div class="sub">龍虎山 · 香港清揚觀 · 台灣聖母宮 — 三地合壇</div>
+  <div class="date-badge">📅 農曆七月 · 地官赦罪 · 冥陽兩利</div>
+</div>
+
+<div class="contact-bar">
+  WhatsApp聯繫：<a href="https://wa.me/85247435153">+852 4743 5153</a>（山羽師兄）
+</div>
+
+<div class="container">
+
+<!-- 活動背景 -->
+<section>
+  <h2>📜 活動背景</h2>
+  <p>中元節，根據道教經典《太上三元賜福赦罪解厄消災延生保命妙經》：農曆七月十五這天，是中元<strong>地官清虛大帝</strong>親自降臨人間，核查大家做過的好事壞事，並為真心懺悔的人赦免罪過的日子。</p>
+  <p>地官大帝大發慈悲，暫時打開幽冥的大門。這一天也是兩界「互通」的特殊日子——對於亡魂來說，是他們難得被寬恕、被關照的機會；對於活著的人來說，也是趁著這個通道打開，做功德、積福報、幫自己清除障礙的好時機。</p>
+
+  <div class="highlight-box">
+    <p><strong>道門有云：「陰安則陽泰」</strong>——只有安頓好幽冥界的祖先亡魂、冤親債主、十方眾生，陽世間的氣運才能真正得到淨化與提升，真正實現「冥陽兩利」，這也是中元法會不可替代的義理所在。</p>
+  </div>
+</section>
+
+<!-- 三地合壇 -->
+<section>
+  <h2>🏛️ 三地合壇・七日連壇</h2>
+  <p>本次「冥陽兩利・兩岸三地」中元祈福法會整合兩岸三大正統道場，發揮各壇優勢：</p>
+
+  <div class="venue-mini">
+    <div class="venue-mini-item">
+      <span class="vicon">🏛️</span>
+      <div class="vname">香港清揚觀</div>
+      <div>8月20-23日（四天）<br>陸路超度 · 破地獄 · 送法船</div>
+    </div>
+    <div class="venue-mini-item">
+      <span class="vicon">🏯</span>
+      <div class="vname">台灣聖母宮</div>
+      <div>9月3-4日（兩天）<br>祈安植福 · 閩台正統道脈</div>
+    </div>
+    <div class="venue-mini-item">
+      <span class="vicon">🏔️</span>
+      <div class="vname">龍虎山</div>
+      <div>9月5日（一天）<br>水路接引 · 法船出海 · 放河燈</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>水路接引</strong>靠龍虎山天然瀘溪河地理優勢，以光破暗接引亡魂；<strong>陸路超度</strong>靠香港清揚觀正統傳承完整科儀，如法如儀破地獄、送法船；<strong>祈安植福</strong>靠台灣聖母宮，承襲閩台正統道脈，專司禳厄納祥。</p>
+  </div>
+</section>
+
+<!-- 科儀亮點 -->
+<section>
+  <h2>📜 法會科儀亮點</h2>
+
+  <h3>🚢 法船引渡</h3>
+  <p>承靈寶法船古制，為亡魂搭建引渡冥舟。道長誦經開光加持，承載亡魂牌位與親人牽掛，沿水路護送亡魂脫離幽暗之境，順利奔赴清淨之路。係道門拔度亡魂的經典載體，圓滿善信孝思與追憶。最後一日於西貢海面進行金光水幽送船儀式——法船出海，象徵亡魂正式啟程。</p>
+
+  <h3>🔥 破地獄科儀</h3>
+  <p>香港清揚觀依古制行「<strong>破地獄</strong>」「<strong>攝召</strong>」「<strong>散花</strong>」「<strong>拜懺</strong>」「<strong>祭幽</strong>」等完整科儀，整套儀軌源流清晰、如法如儀。最後一日由道長帶領誦《水幽金科》，送牌位上大法船。</p>
+
+  <h3>🪷 蓮花河燈</h3>
+  <p>承道門「<strong>以光破暗</strong>」之正統燈儀內核，一燈燃起，既可照破九幽幽暗，為亡魂指引前路；亦能為在世善信點亮心燈，清淨居家雜氣、消弭晦滯，祈願家宅安寧、身心順遂，冥陽同霑法益。</p>
+
+  <h3>📿 法船金元寶 · 清穢香</h3>
+  <p>法船金元寶可視為亡魂回到冥府後的生活費，一份元寶大約是一個月用度。中元祈福結束後，元寶經開光加持後焚化，寄託生人為亡魂提供冥界用度、使其衣食豐足。清穢香循明代《香乘》古方改良，用於居家空間淨化、調和氣場，中元期間焚於廳堂有助化散積滯濁氣、引正氣歸元。</p>
+</section>
+
+<!-- 方案 -->
+<section>
+  <h2>💎 服務選擇</h2>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <div class="p-name">A. 水陸兩利普度祈福</div>
+      <div class="p-tag">入門方案 · 1位亡魂</div>
+    </div>
+    <div class="plan-body">
+      <div class="plan-items"><span>✦</span>香港四天超度法會名額1位 · 專屬牌位名額1個 · 中元疏文1張 · 超度元寶1份</div>
+      <p class="plan-desc">中元法事係為咗冥陽兩界互通，道長會連續做四日，前三日會做<strong>破地獄、攝召、散花</strong>等，透過誦經超度亡魂，拜懺平安為善信解厄，增強氣場平衡。</p>
+      <p class="plan-desc">同時會準備<strong>1個牌位</strong>，牌位上邊會寫上<strong>1位亡魂</strong>嘅名（如先人、嬰靈、冤親債主、十方、寵物等）。道長在最後一日將牌位貼上法船，坐船出海誦經。法船就好比幫亡魂過河嘅神舟，請大士王押船沿水陸兩路護送亡魂。</p>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <div class="p-name">B. 拔罪度苦功德祈福</div>
+      <div class="p-tag">進階方案 · 3位亡魂</div>
+    </div>
+    <div class="plan-body">
+      <div class="plan-items"><span>✦</span>香港四天超度法會名額3位 · 法船牌位名額3個 · 中元疏文3張 · 超度元寶3份 · 念親普度水船1隻（龍虎山） · 普渡蓮花燈1盞</div>
+      <p class="plan-desc">中元法事係冥陽兩界互通嘅，道長會連續做四日，前三日會做<strong>破地獄、攝召、散花</strong>等，透過誦經超度亡魂，拜懺平安為善信解厄，增強氣場平衡。</p>
+      <p class="plan-desc">同時會準備<strong>3個法船牌位</strong>，牌位上邊會寫上<strong>3位亡魂</strong>嘅名（如先人、嬰靈、冤親債主、十方、寵物等）。道長在最後一日將牌位貼上法船，坐船出海誦經。法船就好比幫亡魂過河嘅神舟，請大士王押船沿水陸兩路護送亡魂。</p>
+      <p class="plan-desc">上書3位亡魂姓名，照亮亡魂前路，寄託生人思念。同時贈送<strong>普渡蓮花燈1盞</strong>，上書一位亡魂姓名生辰以及生人的美好祝願，在<strong>龍虎山修道聖地</strong>點燃，一起放於河中，連通兩界，互通祝福。</p>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <div class="p-name">C. 兩岸三地 · 合度化厄解結祈福</div>
+      <div class="p-tag">港台雙壇 · 限量29個名額</div>
+    </div>
+    <div class="plan-body">
+      <div class="plan-suit">適合：希望兩地都做超度嘅緣主｜限量29個名額</div>
+      <div class="plan-items">
+        <span>✦</span>香港四日超度法會名額1個<br>
+        <span>✦</span>台灣<strong>紙扎替身</strong>1個（<strong>限量29個</strong>）<br>
+        <span>✦</span>台灣兩日超度法會名額1個（<strong>限量29位</strong>）<br>
+        <span>✦</span>龍虎山中元渡明蓮花河燈<strong>3盞</strong><br>
+        <span>✦</span>香港法船牌位名額1個<br>
+        <span>✦</span>中元疏文<strong>2張</strong>（香港、台灣各1張）<br>
+        <span>✦</span>中元超度衣包<strong>1份</strong><br>
+        <span>✦</span>超度元寶<strong>3份</strong>
+      </div>
+      <p class="plan-desc">港台兩地分別舉行中元超度科儀，<strong>兩個法壇為亡魂上表疏文、焚化元寶</strong>。香港道長會連續做四日，前三日會做破地獄、攝召、散花等，透過誦經超度亡魂，拜懺平安祈願為善信解厄。同時會準備1個法船牌位，牌位上寫上亡魂嘅名（如先人、嬰靈、冤親債主、十方、寵物等），道長在最後一日將牌位貼上法船，坐船出海誦經。法船就好比幫亡魂過河嘅神舟，請大士王押船沿水陸兩路護送亡魂。</p>
+      <p class="plan-desc">台灣法壇將為亡魂準備<strong>手工紙扎替身1個</strong>、專屬牌位1個，法事連做兩天，透過正統科儀、誦經超度亡魂，為生人布施傳遞善意，積累功德福澤，祈願先人得度。</p>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <div class="p-name">D. 兩岸三地 · 普度宗親大圓滿超度祈福</div>
+      <div class="p-tag">家族圓滿 · 限量20個家族名額</div>
+    </div>
+    <div class="plan-body">
+      <div class="plan-suit">適合：希望全族歷代宗親得超渡嘅緣主</div>
+      <div class="plan-items">
+        <span>✦</span>香港四日超度法會歷代宗親名額1個<br>
+        <span>✦</span>香港隨法船牌位名額1個<br>
+        <span>✦</span>台灣2日超度法會歷代宗親名額1個<br>
+        <span>✦</span>台灣歷代宗親牌位1個<br>
+        <span>✦</span>龍虎山一日超度法會歷代宗親名額1個<br>
+        <span>✦</span><strong>歷代宗親牌位供奉1年</strong>（香港）<br>
+        <span>✦</span>中元疏文<strong>3張</strong>（三地各1張）<br>
+        <span>✦</span>中元超度衣包<strong>3份</strong><br>
+        <span>✦</span>超度元寶<strong>21份</strong><br>
+        <span>✦</span>辟惡正念歸元掛帶<strong>3份</strong>（郵寄）<br>
+        <span>✦</span>念親普度水船<strong>1隻</strong>（龍虎山）<br>
+        <span>✦</span>普渡蓮花燈<strong>7盞</strong>（龍虎山）
+      </div>
+      <p class="plan-desc"><strong>一戶功德主，全族歷代宗親得超渡</strong>。江西龍虎山、香港、台灣三地舉行中元超度科儀，三個法壇為家族亡魂（可署名為<strong>X氏宗親，以姓氏為單位</strong>）上表疏文、焚化元寶。歷代宗親牌位會在中殿供奉<strong>1整年</strong>，另總送家族引渡水船1隻，連同普渡蓮花水燈7盞，於龍虎山靈地燃點放置。係中元期間<strong>積大功德、化解家族共業、護佑全族</strong>嘅圓滿選擇。</p>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <div class="p-name">E. 龍虎呈祥 · 萬靈歸元超拔祈福</div>
+      <div class="p-tag">至尊方案 · 限量1個名額</div>
+    </div>
+    <div class="plan-body">
+      <div class="plan-suit">適合：預算充足、盼望為自己或相關人等累積深厚福澤嘅福主</div>
+      <div class="plan-items">
+        <span>✦</span>龍虎山中元<strong>唯一定制專屬大法船1艘</strong>（5米長2米寬）<br>
+        <span>✦</span>香港四日超度法會名額1個<br>
+        <span>✦</span>香港隨法船牌位1個<br>
+        <span>✦</span>歷代宗親牌位供奉<strong>1年</strong>（香港）<br>
+        <span>✦</span>台灣2日超度法會名額1個<br>
+        <span>✦</span>台灣專屬<strong>手工紙扎、牌位</strong>各1個<br>
+        <span>✦</span>龍虎山一日超度法會名額1個<br>
+        <span>✦</span>法船認供<strong>專屬大牌位1個</strong><br>
+        <span>✦</span>法船牌位<strong>9個</strong><br>
+        <span>✦</span>中元疏文<strong>9張</strong><br>
+        <span>✦</span>超度元寶<strong>49份</strong><br>
+        <span>✦</span>龍虎山中元渡明蓮花河燈<strong>49盞</strong><br>
+        <span>✦</span><strong>斗姆護身玉琯項鏈</strong>
+      </div>
+      <p class="plan-desc">可按照緣主自己意願放置<strong>專屬大法船嘅牌位</strong>——可選擇為自身化解宿業，或為歷代宗親超度亡魂，甚至普度十方做大功德皆可。三壇會係中元期間為你上表疏文、焚化元寶，<strong>一大九小共十個專屬牌位</strong>供奉，另有蓮花河燈49盞為法船破暗引渡。名額只此一席，適合預算充足、盼望為自己或相關人等累積深厚福澤嘅福主優先預定。祈願亡魂得度，宿業消解，參與者心安體泰，運程順遂，萬事圓滿。斗姆乃星宿之母，佩戴<strong>斗姆護身玉琯項鏈</strong>，祈願佩者內心安定、靈台清明，出入安然、遠離驚惶。</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p style="text-align:center;font-size:15px;">🙏 以上方案費用請聯繫師兄了解具體詳情。</p>
+  </div>
+</section>
+
+<!-- 加購項目 -->
+<section>
+  <h2>➕ 加購項目</h2>
+
+  <div class="plan-card">
+    <div class="plan-header" style="background:linear-gradient(135deg,#2d4a3a,#4a7a5a);">
+      <div class="p-name">🪷 中元渡明蓮花河燈</div>
+      <div class="p-tag">以光破暗 · 引魂渡厄</div>
+    </div>
+    <div class="plan-body">
+      <p class="plan-desc">中元節放的河燈又稱為水燈，有「以光破暗、引魂渡厄」嘅寓意。透過點亮燈燭為冤親債主、過世親友/寵物/十方等照亮前方的路。河燈係蓮花形狀，寓意純淨、聖潔。蓮花芯燃燈，寫有參與善信姓名、生辰及心願，吉時由道長開壇誦經，盞盞燈火隨河流飄走。</p>
+      <div class="plan-items" style="margin-top:12px;">
+        <span>✦</span><strong>1盞</strong> HK$699 — 了表心願<br>
+        <span>✦</span><strong>3盞</strong> HK$1,699 — 三官賜福<br>
+        <span>✦</span><strong>6盞</strong> HK$3,299 — 六六大順<br>
+        <span>✦</span><strong>9盞送1盞</strong> HK$5,099 — 十全十美<br>
+        <span>✦</span><strong>20盞</strong> HK$9,999 — 雙十全福<br>
+        <span>✦</span><strong>33盞</strong> HK$15,999 — 三生萬物<br>
+        <span>✦</span><strong>66盞</strong> HK$29,999 — 六合昌隆<br>
+        <span>✦</span><strong>99盞</strong> HK$39,999 — 福運長久
+      </div>
+      <p class="plan-desc" style="margin-top:8px;font-size:13px;color:#888;">河燈上寫生人姓名+生辰，若為亡魂放燈，心願僅限10字以內。</p>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-header" style="background:linear-gradient(135deg,#3a2a4a,#5a3a6e);">
+      <div class="p-name">🌿 清穢香</div>
+      <div class="p-tag">淨化居家 · 調和氣場</div>
+    </div>
+    <div class="plan-body">
+      <p class="plan-desc">清穢香循明代《香乘・晦齋香譜》古法改良配伍，契合道門「香通天地」之儀，用於居家空間淨化、調和氣場嘅經典香品。中元節期間焚於廳堂，可化散宅中積滯濁氣，引正氣歸元，營造清淨安穩嘅居家氛圍。</p>
+      <div class="plan-items" style="margin-top:12px;">
+        <span>✦</span><strong>1份</strong> HK$279
+      </div>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-header" style="background:linear-gradient(135deg,#4a3a2a,#6a5a3a);">
+      <div class="p-name">💛 法船金元寶</div>
+      <div class="p-tag">亡魂冥界用度</div>
+    </div>
+    <div class="plan-body">
+      <p class="plan-desc">法船金元寶可視為亡魂回到冥府後嘅生活費，一份元寶大約係一個月用度。中元祈福結束後，元寶經開光加持後焚化，寄託生人為亡魂提供冥界用度，使其衣食豐足。一份HK$299。</p>
+      <div class="plan-items" style="margin-top:12px;">
+        <span>✦</span><strong>1份</strong> HK$299
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 適合人群 -->
+<section>
+  <h2>👥 邊啲人適合參加？</h2>
+  <div class="suit-tags">
+    <span class="suit-tag">🙏 重視孝道、心懷追思</span>
+    <span class="suit-tag">🏠 家宅不寧、常感阻滯</span>
+    <span class="suit-tag">🔄 運勢起伏、行事多阻</span>
+    <span class="suit-tag">👶 曾有流產/墮胎經歷</span>
+    <span class="suit-tag">💼 經營生意想積善納祥</span>
+    <span class="suit-tag">📚 升學求職盼清除障礙</span>
+    <span class="suit-tag">🌏 海外華人遠祀孝親</span>
+    <span class="suit-tag">🐾 離世寵物超薦</span>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <h2>❓ 常見問題</h2>
+
+  <div class="faq-q">中元法會只係祭拜亡魂嗎？在世的人可以獲得什麼？</div>
+  <div class="faq-a">中元節講求冥陽兩利。一方面表達對先人的掛念，圓滿心意；另一方面在世善信可藉敬祖積善之舉，懺悔過往，為下半年調和居家與個人氣場、化解是非阻滯、積蓄福報。</div>
+
+  <div class="faq-q">道場正統法會同民間祭拜有何分別？</div>
+  <div class="faq-a">民間街坊普渡屬大眾聯合祀典，功德較分散。本次法會依《靈寶普渡科儀》正統道門科儀舉行，設專屬疏文、專壇加持、持續禮懺，能集中福澤、精準回向個人與家族，更為專注圓滿。</div>
+
+  <div class="faq-q">年輕人/無祭祖習慣，可以參加嗎？</div>
+  <div class="faq-a">中元不只是拜祭祖先，也是藉布施十方結善緣的傳統時節。參與祈福也是提醒自己心懷善意，減少日常摩擦芥蒂，願心境穩定開朗，調整下半年的生活狀態。</div>
+
+  <div class="faq-q">商鋪/企業經營者參與中元祈福有咩幫助？</div>
+  <div class="faq-a">做生意嘅人參與祈福，無論係布施、超幽，都係為咗積累善緣，敬表追思之心，祈願經營環境比以前更順利，同人和氣、是非減少，客路自然穩定。善緣聚則人氣旺，人氣旺則財氣聚。</div>
+</section>
+
+</div>
+
+<div class="cta-section">
+  <h2>🙏 有興趣了解更多？</h2>
+  <p>如想了解以上方案嘅具體費用與參與方式，<br>直接回覆我呢個訊息，我詳細同你介紹🙏</p>
+  <div class="btn">💬 回覆我了解更多</div>
+</div>
+
+<div class="footer">
+  楓燧堂 · 兩岸三地・中元水陸普渡法會<br>
+  如有任何疑問，歡迎隨時查詢
+</div>
+
+</body>
+</html>

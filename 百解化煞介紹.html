@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>百解化煞禳災祈福 · 楓燧堂</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Noto Sans HK", "PingFang HK", sans-serif;
+    background: #f7f4ef;
+    color: #2d2a24;
+    font-size: 18px;
+    line-height: 2.0;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #1a0a2e 0%, #2d1a4e 40%, #4a2a6e 70%, #6a4a8e 100%);
+    padding: 64px 24px 48px;
+    text-align: center;
+    color: #fff;
+  }
+  .hero h1 { font-size: 32px; font-weight: 800; letter-spacing: 3px; }
+  .hero .sub { font-size: 15px; opacity: 0.85; margin-top: 8px; max-width: 480px; margin: 10px auto 0; }
+  .hero .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-top: 16px;
+  }
+
+  .contact-bar {
+    background: #2a1a3e;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+  }
+  .contact-bar a { color: #d5b8ff; text-decoration: none; }
+  .contact-bar .sep { margin: 0 8px; opacity: 0.4; }
+
+  .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 40px 0; border-bottom: 1px solid #e5e0d8; }
+  section:last-of-type { border-bottom: none; }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #3a1a5e;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #d5c8e0;
+  }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #4a2a6e;
+    margin: 20px 0 8px;
+  }
+  h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #3a2a4e;
+    margin: 14px 0 6px;
+  }
+  p { font-size: 16px; margin-bottom: 14px; color: #444; }
+  .highlight-box {
+    background: #f0eaf8;
+    border-left: 4px solid #6a4a8e;
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+    margin: 16px 0;
+  }
+  .highlight-box p { margin-bottom: 4px; font-size: 15px; color: #3a2a4e; }
+
+  /* 關煞卡片 */
+  .sha-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px;
+    margin: 18px 0;
+    box-shadow: 0 2px 12px rgba(58,26,94,0.07);
+    border-left: 4px solid #6a4a8e;
+  }
+  .sha-card .sha-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #3a1a5e;
+    margin-bottom: 6px;
+  }
+  .sha-card .sha-question {
+    font-size: 15px;
+    font-weight: 600;
+    color: #5a3a7e;
+    margin: 10px 0 6px;
+  }
+  .sha-card .sha-desc {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.9;
+  }
+  .sha-card .sha-effect {
+    background: #faf6f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-size: 15px;
+    color: #4a3a2e;
+  }
+  .sha-card .sha-effect strong { color: #6a4a8e; }
+  .sha-card .sha-shensha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .sha-card .sha-shensha span {
+    background: #f0eaf8;
+    color: #4a2a6e;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+  }
+  .sha-card .sha-shensha span.highlight { background: #6a4a8e; color: #fff; }
+
+  /* 歲運凶星表格風格 */
+  .suiyun-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .suiyun-item {
+    background: #fff;
+    padding: 12px 14px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  .suiyun-item .s-animal { font-weight: 700; color: #3a1a5e; font-size: 14px; }
+  .suiyun-item .s-star { color: #8a2a4a; font-size: 13px; font-weight: 600; }
+  .suiyun-item .s-desc { font-size: 12px; color: #888; margin-top: 4px; line-height: 1.6; }
+
+  /* 儀式流程 */
+  .ritual-timeline { list-style: none; padding: 0; }
+  .ritual-timeline li {
+    padding: 14px 0 14px 28px;
+    border-left: 2px solid #6a4a8e;
+    position: relative;
+    font-size: 14px;
+    color: #555;
+  }
+  .ritual-timeline li::before {
+    content: '';
+    position: absolute;
+    left: -5px; top: 20px;
+    width: 8px; height: 8px;
+    background: #6a4a8e;
+    border-radius: 50%;
+  }
+  .ritual-timeline li strong { color: #2d2a24; }
+
+  .benefit-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 14px 0;
+    border-left: 4px solid #6a4a8e;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .benefit-box .b-head { font-size: 15px; font-weight: 700; color: #3a1a5e; margin-bottom: 6px; }
+  .benefit-box .b-head span { margin-right: 6px; }
+  .benefit-box .b-effect { font-size: 14px; color: #2d2a24; margin-bottom: 6px; font-weight: 500; }
+  .benefit-box .b-how { font-size: 13px; color: #888; margin-bottom: 0; }
+
+  .suitable-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .suitable-item {
+    background: #fff;
+    padding: 16px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  .suitable-item .e { font-size: 22px; display: block; margin-bottom: 4px; }
+
+  .faq-q {
+    font-weight: 600;
+    color: #3a1a5e;
+    font-size: 16px;
+    margin: 20px 0 6px;
+  }
+  .faq-a {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 14px;
+    padding-left: 0;
+  }
+
+  .cta-section {
+    background: linear-gradient(135deg, #1a0a2e, #4a2a6e);
+    margin: 0 -20px;
+    padding: 48px 24px;
+    text-align: center;
+    color: #fff;
+  }
+  .cta-section h2 { color: #fff; border-bottom: none; font-size: 22px; }
+  .cta-section p { color: rgba(255,255,255,0.9); font-size: 15px; }
+  .cta-section .btn {
+    display: inline-block;
+    background: #fff;
+    color: #1a0a2e;
+    padding: 14px 44px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  .cta-section .btn:hover { transform: scale(1.05); }
+
+  .footer { text-align: center; padding: 24px 20px; font-size: 12px; color: #aaa; }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 24px; }
+    .suitable-list { grid-template-columns: 1fr; }
+    .suiyun-grid { grid-template-columns: 1fr; }
+  }
+</style>
+<script src="https://beacon.cdn.qq.com/sdk/4.5.9/beacon_web.min.js"></script>
+<script>
+(function(){
+  try{
+    var beacon=new BeaconAction({
+      appkey:'0WEB06U85YBSLJNL',
+      versionCode:'1.0.0',
+      channelID:'share',
+      delay:1000,
+      sessionDuration:30*60*1000,
+      isOversea:false,
+      needReportRqdEvent:false
+    });
+    beacon.onDirectUserAction('preview_page_view',{
+      'url':location.href,
+      'referrer':document.referrer,
+      'title':document.title,
+      'sandbox_id':'7794e67ce39e45beaaaa6759124dc2a7'
+    });
+  }catch(e){}
+})();
+</script></head>
+<body>
+
+<div class="hero">
+  <h1>百解化煞禳災祈福</h1>
+  <div class="sub">108道關煞 · 源頭化解 · 打通人生關隘</div>
+  <div class="badge">🏛️ 香港清揚觀 · 正統道教科儀</div>
+</div>
+
+<div class="contact-bar">
+  WhatsApp聯繫：<a href="https://wa.me/85247435153">+852 4743 5153</a>（山羽師兄）
+</div>
+
+<div class="container">
+
+<!-- ===== 一、活動背景 ===== -->
+<section>
+  <h2>📜 活動背景</h2>
+  <p>古語有云：「星辰臨照，關煞阻滯，非仗禱祈，焉能通百關。」人生起伏，猶如一幅動態的星圖——命盤中的神煞，是天地能量與個人生辰八字相互作用形成的。</p>
+  <p>人的命盤中共有 <strong>36種關、72種煞</strong>，合36天罡72地煞，總共 <strong>108道關煞</strong>。除了命盤中固有的神煞，還有每年值年太歲輪換給十二生肖帶來的危機。二者疊加，則易形成小人侵擾、機遇流失、事業困頓、錢財破耗等諸多連鎖困境，令人如負枷鎖，舉步維艱。</p>
+  <div class="highlight-box">
+    <p>🔑 經書記載：禳關度煞需要一個個查，查出來一個問題，通一個關隘，燒一道符，非常耗精力。而百解關煞法事可以為所犯之關隘禳災化解，為未犯之關隘培植福資——也就是所謂的 <strong>「前消罪業，後積福」</strong>。</p>
+  </div>
+  <p>人生好似行山路，有時順風順水，有時撞板多過食飯。關煞就係途中嘅碎石同迷霧，唔清理嘅話，行得好辛苦。無論係為咗彌補過往，仲係為咗未雨綢繆，都可以通過正統嘅百解關煞法事，調和陰陽，祈求早日脫離困境。</p>
+</section>
+
+<!-- ===== 二、六大關煞分類 ===== -->
+<section>
+  <h2>⚠️ 六大關煞分類</h2>
+  <p>關煞由生辰八字決定——人各有命，千人千煞。以下係最常見嘅六大關煞類型，你可以睇下有冇中到：</p>
+
+  <!-- 1. 童子煞 -->
+  <div class="sha-card">
+    <div class="sha-title">👶 童子煞</div>
+    <div class="sha-question">你係咪⋯⋯</div>
+    <div class="sha-desc">
+      自細體質比較弱，容易受到驚嚇，夜晚喊唔停？<br>
+      成長過程中，每逢重要考試或晉升前夕，總有意外狀況發生？<br>
+      成日覺得自己同周圍環境或人群格格不入，心性純真但世事多阻？
+    </div>
+    <div class="sha-effect">
+      <strong>對你嘅影響：</strong>童子煞嘅人通常心地純良，但人生路比人曲折——細個多病痛，大個多阻滯，成日覺得自己「唔屬於呢個世界」。即使已經成年，呢啲影響都唔會自然消失。
+    </div>
+    <div class="sha-shensha">
+      <span>童子煞</span><span class="highlight">將軍箭</span><span>閻王關</span><span>鬼門關</span><span>五鬼關</span><span>金鎖關</span><span>四柱關</span><span>落井關</span><span>斷橋關</span><span>雞飛關</span><span>取命關</span><span>雷公关</span><span>短命關</span><span>百日關</span><span>千日關</span><span>浴盆煞</span><span>夜啼關</span>
+    </div>
+  </div>
+
+  <!-- 2. 小人煞 -->
+  <div class="sha-card">
+    <div class="sha-title">👥 小人煞</div>
+    <div class="sha-question">你係咪⋯⋯</div>
+    <div class="sha-desc">
+      職場上功勞成日俾人冒領或奪走？<br>
+      無端端捲入是非口舌，甚至官非訴訟？<br>
+      合作關係脆弱，簽約前成日生變故？<br>
+      做嘢過程中總有意料之外嘅阻滯反覆出現？
+    </div>
+    <div class="sha-effect">
+      <strong>對你嘅影響：</strong>小人煞重嘅人，明明自己好努力，但成果總係俾人搶走。唔係你做得唔好，而係命格上容易吸引小人埋身。事業上嘅阻滯好多時唔係能力問題，而係「人」嘅問題。
+    </div>
+    <div class="sha-shensha">
+      <span class="highlight">白虎煞</span><span class="highlight">天狗</span><span>劫煞</span><span>天羅地網</span><span>亡神</span><span>勾绞</span><span>官符</span><span>五鬼</span><span>暴败</span><span>指背煞</span><span>卷舌</span><span>绞煞</span>
+    </div>
+  </div>
+
+  <!-- 3. 駁婚煞 -->
+  <div class="sha-card">
+    <div class="sha-title">💔 駁婚煞</div>
+    <div class="sha-question">你係咪⋯⋯</div>
+    <div class="sha-desc">
+      感情路坎坷，好難進入穩定關係？<br>
+      婚後夫妻爭吵不斷，成日為小事嚴重失和？<br>
+      次次都吸引到唔適合或者別有目的嘅爛桃花，損耗精神？
+    </div>
+    <div class="sha-effect">
+      <strong>對你嘅影響：</strong>駁婚煞唔係話你註定孤獨終老，而係會令你喺感情路上比平常人遇到更多波折——唔係你揀錯人，就係啱嘅人總係喺錯誤嘅時間出現。長期落去，會令人對感情失去信心。
+    </div>
+    <div class="sha-shensha">
+      <span>紅艷</span><span class="highlight">孤辰</span><span class="highlight">寡宿</span><span>八專</span><span>陰差陽錯</span><span>孤鸞煞</span><span>桃花煞（咸池）</span><span>滾浪桃花</span><span>望門寡</span><span>冲天煞</span><span>死魂煞</span><span>絕房煞</span><span>呻吟煞</span>
+    </div>
+  </div>
+
+  <!-- 4. 衝財煞 -->
+  <div class="sha-card">
+    <div class="sha-title">💰 衝財煞</div>
+    <div class="sha-question">你係咪⋯⋯</div>
+    <div class="sha-desc">
+      錢左手來右手去，好難積蓄？<br>
+      投資理財屢屢睇錯時機？<br>
+      經營生意成日出現莫名虧損？<br>
+      成日因為手機損壞、車輛故障、意外罰款等事由破財？
+    </div>
+    <div class="sha-effect">
+      <strong>對你嘅影響：</strong>衝財煞嘅人唔係冇能力搵錢，而係啲錢好似「穿咗窿嘅袋」——入得快，出得仲快。最令人沮喪嘅係，好多時啲開銷都係意料之外、防不勝防。唔理嘅話，呢個問題只會越滾越大。
+    </div>
+    <div class="sha-shensha">
+      <span class="highlight">大耗</span><span>死符</span><span class="highlight">小耗</span><span>天賊</span><span class="highlight">空亡</span><span>劫煞</span><span>官符</span><span>卷舌</span><span>绞煞</span><span>暴败</span>
+    </div>
+  </div>
+
+  <!-- 5. 橫災煞 -->
+  <div class="sha-card">
+    <div class="sha-title">🩹 橫災煞</div>
+    <div class="sha-question">你係咪⋯⋯</div>
+    <div class="sha-desc">
+      比常人更容易遇到輕微碰撞、整親等倒霉事？<br>
+      健康上雖無大病，但小病痛纏綿不斷，斷唔到尾？<br>
+      出行或工作時成日要提心吊膽？
+    </div>
+    <div class="sha-effect">
+      <strong>對你嘅影響：</strong>橫災煞唔係話你會有大意外，而係「陰啲陰啲」嘅小問題不斷——今日拗柴，聽日整親，後日發燒。好似做咩都唔順手，連行路都會撞到腳。呢啲小問題累積埋一齊，好影響心情同狀態。
+    </div>
+    <div class="sha-shensha">
+      <span>喪門</span><span class="highlight">弔客</span><span>白衣</span><span>病符</span><span>披麻</span><span class="highlight">血刃</span><span>血支</span><span>血忌</span><span>羊刃</span><span>飛刃</span><span>天刑</span><span>天厄</span><span>天哭</span><span>伏尸</span><span>劍鋒</span>
+    </div>
+  </div>
+
+  <!-- 6. 歲運凶星 -->
+  <div class="sha-card">
+    <div class="sha-title">⭐ 歲運凶星</div>
+    <div class="sha-question">除了命盤固有嘅神煞，每年太歲輪換都會帶來唔同嘅影響——</div>
+    <div class="sha-desc">
+      歲運凶星係每年因應生肖變化而出現嘅流年影響。命中有煞，流年又犯太歲，就好似「屋漏兼逢連夜雨」，想順都難。
+    </div>
+    <div class="sha-effect">
+      <strong>對你嘅影響：</strong>歲運凶星會同你命盤入面本身嘅關煞疊加，令問題惡化。例如本身有衝財煞嘅人，如果流年撞正「大耗」星，嗰年嘅破財情況會特別嚴重。
+    </div>
+    <h4 style="margin-top:14px;">丙午年（2026）各生肖歲運凶星：</h4>
+    <div class="suiyun-grid">
+      <div class="suiyun-item"><div class="s-animal">🐭 鼠</div><div class="s-star">歲破</div><div class="s-desc">易有破財與家庭不順，避免重大投資或借貸</div></div>
+      <div class="suiyun-item"><div class="s-animal">🐮 牛</div><div class="s-star">死符</div><div class="s-desc">注意健康與平安，避免探病問喪，以防加重病氣</div></div>
+      <div class="suiyun-item"><div class="s-animal">🐯 虎</div><div class="s-star">官符</div><div class="s-desc">易惹口舌是非與官非，簽約交往務必留心</div></div>
+      <div class="suiyun-item"><div class="s-animal">🐰 兔</div><div class="s-star">太陰</div><div class="s-desc">有財運貴人，但男性需防因感情或酒色破財</div></div>
+      <div class="suiyun-item"><div class="s-animal">🐲 龍</div><div class="s-star">喪門</div><div class="s-desc">留意家人健康，避免參加白事或探病</div></div>
+      <div class="suiyun-item"><div class="s-animal">🐍 蛇</div><div class="s-star">太陽</div><div class="s-desc">表面風光，易有虛耗不聚財、是非多</div></div>
+      <div class="suiyun-item"><div class="s-animal">🐴 馬</div><div class="s-star">太歲</div><div class="s-desc">諸事波動不測，宜低調保守，主動祈福化解</div></div>
+      <div class="suiyun-item"><div class="s-animal">🐏 羊</div><div class="s-star">病符</div><div class="s-desc">健康運勢較弱，注重養生，避免出入醫院等場所</div></div>
+      <div class="suiyun-item"><div class="s-animal">🐵 猴</div><div class="s-star">弔客</div><div class="s-desc">需防意外損傷，注意安全，多關心家人安康</div></div>
+      <div class="suiyun-item"><div class="s-animal">🐔 雞</div><div class="s-star">福德</div><div class="s-desc">整體吉祥，但可能會無故捲入他人是非</div></div>
+      <div class="suiyun-item"><div class="s-animal">🐶 狗</div><div class="s-star">白虎</div><div class="s-desc">提防血光之災、意外損傷，凡事勿強出頭</div></div>
+      <div class="suiyun-item"><div class="s-animal">🐷 豬</div><div class="s-star">龍德</div><div class="s-desc">有貴人相助，但忌獨斷獨行傷和氣</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 三、犯咗關煞唔化解會點？ ===== -->
+<section>
+  <h2>⛈️ 犯咗關煞唔化解會點？</h2>
+  <p>關煞唔係過雲雨，而係一朵天生就伴隨著你、喺頭上籠罩嘅雲朵。呢團雲一旦變成烏雲，唔單止可能令你全年都黑仔，仲會越黐越大、越滾越大——</p>
+  <div class="highlight-box">
+    <p>今日因「小耗」破財，聽日就可能為錢同人嗌交惹上官非，後日或許就撞到「白虎」或「血刃」引來的意外。等你發現嗰陣，已經係小人坐大、貴人走清、運程爛尾嘅局面。</p>
+  </div>
+  <p>關煞唔除，就好似時刻攞住個唔知幾時會爆炸嘅炸彈。所以要趁早化解，等個天光返，行路先順暢。</p>
+</section>
+
+<!-- ===== 四、法會詳情 ===== -->
+<section>
+  <h2>🏛️ 法會詳情</h2>
+
+  <h3>法會地點</h3>
+  <p><strong>香港清揚觀</strong> — 位於香港新界西北部屯門，傳承道教聖地文化，以「道、經、師」三寶為基石。觀內設有瑤池寶殿、六壬寶殿、天師寶殿、元辰斗姆寶殿等多個寶殿，供奉多位星君，常有善信前往供奉香火、祈福求願。</p>
+
+  <h3>法事流程</h3>
+  <p>百解化煞禳災祈福法會全程分為 <strong>三場</strong> 進行，歷時3小時以上：</p>
+  <ul class="ritual-timeline">
+    <li><strong>第一場：玄門開壇啟請科</strong> — 道長開壇啟請，禮請諸天神聖降臨法壇，稟告本次法會緣由，接通天地能量</li>
+    <li><strong>第二場：平安道場</strong> — 誦經禮懺，為善信祈求平安，化解關煞阻滯，調和周身氣場</li>
+    <li><strong>第三場：玄門讚星科</strong> — 讚星禮斗，焚化通關化煞元寶，為善信破除百關，掃清磁場積累的不良負能</li>
+  </ul>
+
+  <h3>法會做咩？對你有咩用？</h3>
+
+  <div class="benefit-box">
+    <div class="b-head"><span>📖</span>上表疏文 · 接通神明</div>
+    <div class="b-effect">👉 你嘅姓名同八字會登錄喺百解疏文之上，由道長喺法會中啟奏三元三品三官大帝。等於你親自去到清揚觀，向神明稟明自己的關煞情況，請求化解。</div>
+    <div class="b-how">道長焚符奏表，以通天百解牒文啟奏三官大帝，溝通天地人三才。</div>
+  </div>
+
+  <div class="benefit-box">
+    <div class="b-head"><span>🪧</span>專屬牌位供奉 · 持續加持</div>
+    <div class="b-effect">👉 你嘅專屬牌位會喺法壇上受香火供奉，道長逐一唸名加持。等於喺法會期間，神明目光會持續關注你嘅情況，唔係「一次過就完」。</div>
+    <div class="b-how">定制個人或家族專屬牌位，供奉於法壇諸神前，由道長依科演教、逐一祈願。</div>
+  </div>
+
+  <div class="benefit-box">
+    <div class="b-head"><span>🔥</span>焚化通關元寶 · 實質化解</div>
+    <div class="b-effect">👉 元寶唔係普通金紙，而係「通關費」——等於幫你打通每一道關隘嘅阻滯。關煞係無形嘅障礙，需要透過呢啲傳統儀式去疏通。</div>
+    <div class="b-how">經開光加持的通關化煞金元寶，喺法會中逐一焚化，對應每一道需要化解嘅關煞。</div>
+  </div>
+
+  <div class="benefit-box">
+    <div class="b-head"><span>🕯️</span>祈運燈 · 點亮元辰氣場</div>
+    <div class="b-effect">👉 燈係道教溝通天地嘅重要媒介。祈運燈點起，調動日、月、星能量對你嘅本命元辰進行加持，等關煞化解之後，好運氣可以順利入到嚟。</div>
+    <div class="b-how">祈運燈供奉於諸聖前，法會期間持續燃點，道長誦經加持。</div>
+  </div>
+
+  <div class="benefit-box">
+    <div class="b-head"><span>🧧</span>百解消災符 · 隨身護佑</div>
+    <div class="b-effect">👉 法會後你會收到一道由高功道長加持嘅百解消災符。平時放入銀包或隨身袋，正氣會時刻滋養你嘅氣場，喺關鍵時候化解負能。</div>
+    <div class="b-how">道長於法會中親繪符咒，加持後交付善信隨身佩戴。不可隨意打開查看，不可弄髒弄濕。</div>
+  </div>
+
+  <div class="benefit-box">
+    <div class="b-head"><span>🎋</span>納福祈祥葫蘆 · 斬煞護正</div>
+    <div class="b-effect">👉 葫蘆融匯道門真意，吸收天地靈氣，有斬煞護正之神威。可掛喺隨身袋、車上或家中玄關，持續斬斷不淨負能、化解凶煞災厄。</div>
+    <div class="b-how">可隨身佩戴或擺放家中。忌放衛生間、廚房、正對鏡子；需通風見光、保持潔淨。</div>
+  </div>
+</section>
+
+<!-- 視頻參考 -->
+<section>
+  <h2>🎥 法會視頻參考</h2>
+  <p style="font-size:14px;color:#888;">以下係百解化煞法會部分視頻，可供參考：</p>
+  <p style="font-size:14px;margin-bottom:4px;">
+    📹 <strong>五月廿九百解祈福</strong><br>
+    <a href="https://img-fe.seersecret.com/file/cac17dce-84c4-4084-9c5f-babd939302c0.mp4" target="_blank" style="color:#6a4a8e;word-break:break-all;">https://img-fe.seersecret.com/file/cac17dce-84c4-4084-9c5f-babd939302c0.mp4</a>
+  </p>
+  <p style="font-size:13px;color:#aaa;">*部分視頻僅供參考，完整版會於法會後提供</p>
+</section>
+
+<!-- ===== 五、邊啲人適合參加 ===== -->
+<section>
+  <h2>👥 邊啲人適合參加？</h2>
+  <p>如果你有以下任何一種情況，百解化煞可能就係你需要的：</p>
+  <div class="suitable-list">
+    <div class="suitable-item"><span class="e">🌱</span>自細成長多波折，<br>臨門一腳總出錯</div>
+    <div class="suitable-item"><span class="e">💰</span>銀包好似穿窿，<br>投資經常失敗</div>
+    <div class="suitable-item"><span class="e">🤕</span>拗柴撞板無日安寧，<br>莫名身上有小傷口</div>
+    <div class="suitable-item"><span class="e">👥</span>職場被小人針對，<br>成日被人篤背脊</div>
+    <div class="suitable-item"><span class="e">💔</span>正緣難遇，<br>夫妻戀人成日嗌交</div>
+    <div class="suitable-item"><span class="e">😞</span>長期身心唔爽利，<br>但查唔出原因</div>
+    <div class="suitable-item"><span class="e">🛡️</span>想做全面預防，<br>催旺自身好運</div>
+    <div class="suitable-item"><span class="e">⭐</span>想同時化解<br>歲運凶星影響</div>
+  </div>
+</section>
+
+<!-- ===== 六、常見問題 ===== -->
+<section>
+  <h2>❓ 常見問題</h2>
+
+  <div class="faq-q">問：法會係點樣嘅？喺邊度舉行？</div>
+  <div class="faq-a">百解化煞禳災祈福法會喺香港清揚觀進行，幫助每一位緣主化解命中關煞同流年關煞。全程法事分為三場進行——開壇啟請、平安道場、玄門讚星科，加上化元寶等流程，全程需要3小時以上。</div>
+
+  <div class="faq-q">問：參加之後幾時會感受到效果？</div>
+  <div class="faq-a">每個人的業力和敏感程度不同。有的朋友參與法會後短期內會感到心情舒暢、阻滯減少；有的則是在後續生活中，慢慢發現原本的難題變得容易解決。法事係一個強大的善緣開端，關鍵仍要配合個人的積極心態同善行。</div>
+
+  <div class="faq-q">問：我已經成年了，係咪唔適合化解童子煞？</div>
+  <div class="faq-a">唔係咁話。如果自細體質弱、成長波折多，緣主命中可能犯童子煞——即使已經成年，都需要通過法事化解，因為所有關煞都唔會因為長大成人而自然消失。</div>
+
+  <div class="faq-q">問：化解關煞會影響原有命盤嗎？</div>
+  <div class="faq-a">化解關煞係破除命盤中關煞、流年關煞帶來的阻礙以及不良負能，讓命盤原本的吉運得以正常顯現。化關煞會讓緣主的氣運比原來的走向越來越順，唔會改變你本身嘅命格。</div>
+
+  <div class="faq-q">問：通天大百解可以化解所有關煞嗎？</div>
+  <div class="faq-a">通天大百解全盤化解祈福參與完整的三場祈福，可以一次性化解個人對應的108道原有的命盤關煞以及歲運凶星入命帶來的不良影響。</div>
+
+  <div class="faq-q">問：百解消災符點樣用？</div>
+  <div class="faq-a">百解消災符可放入隨身包、錢包或掛在車鑰匙上，貼身攜帶可以讓正氣時時刻刻滋養你的氣場。切記不可隨意打開查看，不可弄髒、弄濕。若無故破損、褪色，代表百解消災符已為你擋過一劫，可再請新符，舊符需要焚化送神。</div>
+
+  <div class="faq-q">問：納福祈祥葫蘆點樣用？</div>
+  <div class="faq-a">可隨身佩在包袋、服飾上，開車的緣主也可掛在車上護佑平安出行。需注意專人專用，不借給他人佩戴。如擺放家中，可選玄關或客廳財位，切忌放衛生間、廚房、正對鏡子，需通風見光、保持潔淨。</div>
+</section>
+
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>🙏 想了解自己命盤有冇關煞？</h2>
+  <p>你可以send你嘅出生年月日時俾我，<br>我幫你免費睇下有冇犯煞，再決定參唔參加法事都未遲。</p>
+  <div class="btn">💬 回覆我問多啲</div>
+</div>
+
+<div class="footer">
+  楓燧堂 · 百解化煞禳災祈福<br>
+  如有任何疑問，歡迎隨時查詢
+</div>
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>七夕良辰・雙壇祈福法會 · 楓燧堂</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Noto Sans HK", "PingFang HK", sans-serif;
+    background: #faf6f0;
+    color: #2d2a24;
+    font-size: 18px;
+    line-height: 2.0;
+  }
+  .hero {
+    background: linear-gradient(135deg, #8b1a2b 0%, #c9405a 40%, #e8a0b4 100%);
+    padding: 60px 24px 40px;
+    text-align: center;
+    color: #fff;
+  }
+  .hero h1 { font-size: 28px; font-weight: 700; letter-spacing: 2px; margin-bottom: 8px; }
+  .hero .sub { font-size: 15px; opacity: 0.9; margin-top: 4px; }
+  .hero .date-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-top: 16px;
+  }
+  .contact-bar {
+    background: #5a1a2a;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+  }
+  .contact-bar a { color: #f0c8d0; text-decoration: none; }
+  .contact-bar .sep { margin: 0 8px; opacity: 0.4; }
+
+  .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 40px 0; border-bottom: 1px solid #f0e8e8; }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #8b1a2b;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0d5d5;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #8b1a2b;
+    margin: 24px 0 10px;
+    padding-left: 12px;
+    border-left: 4px solid #c9405a;
+  }
+  h4 { font-size: 15px; font-weight: 600; color: #3a2a3a; margin: 14px 0 6px; }
+  p { font-size: 17px; margin-bottom: 16px; color: #444; }
+
+  .highlight-box {
+    background: linear-gradient(135deg, #fef9f5 0%, #fff5f0 100%);
+    border-left: 4px solid #c9405a;
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+    margin: 16px 0;
+  }
+  .highlight-box p { margin-bottom: 4px; font-size: 15px; color: #5a3a3a; }
+  .highlight-box p:last-child { margin-bottom: 0; }
+
+  .deity-row { display: flex; gap: 12px; margin: 16px 0; }
+  .deity-card {
+    flex: 1; background: #fff; border-radius: 12px; padding: 18px 14px;
+    text-align: center; box-shadow: 0 2px 8px rgba(201,64,90,0.1);
+  }
+  .deity-card .d-emoji { font-size: 36px; display: block; margin-bottom: 8px; }
+  .deity-card h4 { font-size: 15px; color: #8b1a2b; margin-bottom: 4px; }
+  .deity-card p { font-size: 13px; color: #888; margin-bottom: 0; line-height: 1.6; }
+
+  /* 方案卡片 - 改進版 */
+  .plan-card {
+    background: #fff;
+    border-radius: 14px;
+    margin: 18px 0;
+    box-shadow: 0 2px 12px rgba(139,26,43,0.08);
+    overflow: hidden;
+  }
+  .plan-header {
+    background: linear-gradient(135deg, #8b1a2b, #c9405a);
+    color: #fff;
+    padding: 14px 20px;
+  }
+  .plan-header .p-name { font-size: 17px; font-weight: 700; color: #fff; }
+  .plan-header .p-tag { font-size: 12px; opacity: 0.9; margin-top: 2px; }
+  .plan-body { padding: 16px 20px; }
+  .plan-suit {
+    font-size: 14px;
+    color: #b06060;
+    background: #fef9f5;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+  .plan-items {
+    font-size: 14px;
+    color: #5a3a3a;
+    background: #faf6f0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    line-height: 1.7;
+  }
+  .plan-items span { color: #c9405a; margin-right: 4px; }
+  .plan-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+  }
+  .plan-desc strong { color: #8b1a2b; }
+
+  .suit-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .suit-tag {
+    background: #fff; border: 1px solid #f0d5d5; padding: 6px 14px;
+    border-radius: 20px; font-size: 13px; color: #8b1a2b;
+  }
+
+  .faq-q { font-weight: 600; color: #8b1a2b; font-size: 15px; margin: 18px 0 6px; }
+  .faq-a { font-size: 14px; color: #666; margin-bottom: 12px; }
+
+  .cta-section {
+    background: linear-gradient(135deg, #8b1a2b, #c9405a);
+    margin: 0 -20px; padding: 48px 24px; text-align: center; color: #fff;
+  }
+  .cta-section h2 { color: #fff; border-bottom: none; font-size: 22px; }
+  .cta-section p { color: rgba(255,255,255,0.9); font-size: 15px; }
+  .cta-section .btn {
+    display: inline-block; background: #fff; color: #8b1a2b;
+    padding: 14px 44px; border-radius: 50px; font-size: 17px; font-weight: 700;
+    text-decoration: none; margin-top: 20px;
+  }
+  .footer { text-align: center; padding: 24px 20px; font-size: 12px; color: #aaa; }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 22px; }
+    .deity-row { flex-direction: column; }
+  }
+</style>
+<script src="https://beacon.cdn.qq.com/sdk/4.5.9/beacon_web.min.js"></script>
+<script>
+(function(){
+  try{
+    var beacon=new BeaconAction({
+      appkey:'0WEB06U85YBSLJNL',
+      versionCode:'1.0.0',
+      channelID:'share',
+      delay:1000,
+      sessionDuration:30*60*1000,
+      isOversea:false,
+      needReportRqdEvent:false
+    });
+    beacon.onDirectUserAction('preview_page_view',{
+      'url':location.href,
+      'referrer':document.referrer,
+      'title':document.title,
+      'sandbox_id':'7794e67ce39e45beaaaa6759124dc2a7'
+    });
+  }catch(e){}
+})();
+</script></head>
+<body>
+
+<div class="hero">
+  <h1>七夕良辰・雙壇祈福法會</h1>
+  <div class="sub">月老仙師 · 狐僊娘娘 · 合祀祈福</div>
+  <div class="date-badge">📅 8月19日 · 農曆七月初七 · 道德臘日</div>
+</div>
+
+<div class="contact-bar">
+  WhatsApp聯繫：<a href="https://wa.me/85247435153">+852 4743 5153</a>（山羽師兄）
+</div>
+
+<div class="container">
+
+<!-- 活動背景 -->
+<section>
+  <h2>📜 活動背景</h2>
+  <p>今年七夕法會定在道家五臘日之<strong>道德臘日</strong>——<strong>三元五臘</strong>吉日疊加<strong>七月初七和合之日</strong>，嚴依道教科儀，正統道家祈福，為參與信眾注福、增魅、和合、開運。</p>
+
+  <div class="highlight-box">
+    <p><strong>道德臘日</strong> — 「三元五臘」係道家核心吉日。《赤松子章歷》載此日五帝校定生人骨體枯盛，學業文集、名宦功業、上章謝罪、大考權重。善信者宜在此吉日擇良辰以順應天時、修德消業、祈福許願。</p>
+    <p><strong>七月初七乞巧節</strong> — 織女牛郎的典故最早雛形見於《詩經》，後《史記天宮書》《漢書天文志》中都有記載。籍陰陽和合之吉日，舉辦儀式催正緣、旺人緣、和合感情、提升魅力氣場。</p>
+  </div>
+</section>
+
+<!-- 合祀正神 -->
+<section>
+  <h2>🙏 合祀正神</h2>
+  <p>本次法會特別合祀<strong>月老仙師</strong>與<strong>狐僊娘娘</strong>兩位道教正神，各司其職、互為補充：</p>
+
+  <div class="deity-row">
+    <div class="deity-card">
+      <span class="d-emoji">🌠</span>
+      <h4>月老仙師</h4>
+      <p>道教正統姻緣主神<br>掌管天下婚牘<br>牽正緣、穩感情</p>
+    </div>
+    <div class="deity-card">
+      <span class="d-emoji">🦊</span>
+      <h4>狐僊娘娘</h4>
+      <p>龍虎山700餘年正神<br>主人緣魅力<br>旺人脈、招貴人</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>兩聖互補：</strong>月老仙師負責「遇見對的人，促進姻緣和合」，狐僊娘娘負責「提升自身吸引力，拓寬人際脈絡」。從自身的魅力打造出發，職場上貴人相助，感情中由相遇到相守，獲得長久幸福。</p>
+  </div>
+</section>
+
+<!-- 法會詳情 -->
+<section>
+  <h2>📋 法會詳情</h2>
+  <p><strong>📍 祈福日期：</strong>8月19日（農曆七月初七 七夕當天）</p>
+  <p><strong>📍 法會地點：</strong>江西龍虎山 · 狐僊堂 &amp; 祈福堂</p>
+  <p>龍虎山係道教聖地，設有「<strong>狐僊堂</strong>」供奉狐僊娘娘、「<strong>祈福堂</strong>」供奉月老仙師，常年接受十方善信香火。</p>
+
+  <h4>法會環節</h4>
+  <p>道長按正統科儀開壇，誦經加持、上表疏文、恭點祈福燈。善信的姓名與心願登記於祈福文疏，由道長在法會中逐一傳達，祈願諸事順遂。</p>
+</section>
+
+<!-- 方案 -->
+<section>
+  <h2>💎 專屬服務選擇</h2>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <div class="p-name">A. 個人魅力 · 狐僊增緣祈福</div>
+      <div class="p-tag">適合：單身求正緣、求貴人，職場求人脈嘅緣主</div>
+    </div>
+    <div class="plan-body">
+      <div class="plan-suit">適合：單身求正緣、求貴人，職場求人脈、銷售/講師/主播/藝人等需提升個人魅力的緣主</div>
+      <div class="plan-items"><span>✦</span>祈福法會名額1位 · 誦經加持1場 · 專屬祈福文疏1份 · 通緣燈1盞 · 白狐水晶掛墜項鏈1份</div>
+      <p class="plan-desc">道長依你嘅個人資料備置祈福卡，為你誦經傳達心願。透過恭點祈福燈參與祈福，<strong>恭請狐僊娘娘加持</strong>，助力提升個人氣質與魅力、職場上拓展人際脈絡，生活中結交良緣貴人。白狐水晶掛墜項鏈經加持後郵寄至緣主手上。</p>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <div class="p-name">B. 和合祈緣 · 月老證盟祈福</div>
+      <div class="p-tag">適合：戀愛中、已婚者希望感情更加穩固</div>
+    </div>
+    <div class="plan-body">
+      <div class="plan-suit">適合：戀愛中、已婚者希望感情更加穩固，想減少雙方冷戰、摩擦及隔閡的緣主</div>
+      <div class="plan-items"><span>✦</span>祈福法會名額1位 · 誦經加持1場 · 專屬祈福文疏1份 · 通緣燈1盞 · 桃木枝掛飾1份</div>
+      <p class="plan-desc">透過恭點祈福燈參與祈福，道長依你嘅個人資料備置祈福卡，為你誦經傳達心願。<strong>恭請月老仙師加持</strong>，祈願感情穩固、減少摩擦。桃木枝掛飾經加持後郵寄至緣主手上。</p>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <div class="p-name">C. 雙壇祈願 · 修復安和祈福</div>
+      <div class="p-tag">需同時錄入兩條信息 · 感情修復</div>
+    </div>
+    <div class="plan-body">
+      <div class="plan-suit">適合：感情面臨挑戰、人際交往不穩，期望因緣和合或修復人際關係裂痕的緣主</div>
+
+      <h4 style="font-size:14px;color:#8b1a2b;margin:0 0 8px;">📦 方案內容</h4>
+      <div class="plan-items">
+        <span>✦</span>雙壇祈福法會名額1位<br>
+        <span>✦</span>誦經加持1場<br>
+        <span>✦</span>專屬祈福文疏1份<br>
+        <span>✦</span>祈福桃木枝繫月老紅線1份<br>
+        <span>✦</span>姻緣和合符1道
+      </div>
+
+      <h4 style="font-size:14px;color:#8b1a2b;margin:12px 0 8px;">📋 後續安排</h4>
+      <div class="plan-items">
+        <span>✦</span>傳達心願、祈請護佑<br>
+        <span>✦</span>登記雙方姓名及心願<br>
+        <span>✦</span>月老牽緣，祈請月老仙師鞏固情緣<br>
+        <span>✦</span>加持後置臥室指定位置打造更強感應
+      </div>
+
+      <p class="plan-desc"><strong>需同時錄入兩條信息。</strong>將<strong>雙方姓名</strong>登記於祈福文疏，由道長主持祈福，虔誠祈願情感和睦融洽。同時備有祈福桃木枝，繫上專屬祈福繩，祈求情感穩定長久。<strong>姻緣和合符</strong>由高功道長加持，長伴護佑。</p>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <div class="p-name">D.【尊享】地久天長祈福</div>
+      <div class="p-tag">僅限7個名額 · 1年長期敬奉</div>
+    </div>
+    <div class="plan-body">
+      <div class="plan-suit">適合：①期望圓滿良緣的商界翹楚與社會賢達 ②期盼家運昌隆的企業經營者 ③希望穩固情感關係的人士 ④需提升個人氣質拓展人脈的從業者 ⑤面臨情感困惑盼關係改善的人群</div>
+
+      <h4 style="font-size:14px;color:#8b1a2b;margin:0 0 8px;">📦 方案內容</h4>
+      <div class="plan-items">
+        <span>✦</span>祈福法會名額1位 · 誦經加持1場 · 專屬祈福文疏1份<br>
+        <span>✦</span><strong>認供狐僊殿小神像龕位1個（1年）</strong><br>
+        <span>✦</span><strong>認供專設桃花斗（1年）</strong><br>
+        <span>✦</span>通緣燈<strong>9盞</strong><br>
+        <span>✦</span>狐僊庇護<strong>隨身壇牌1個</strong>
+      </div>
+
+      <h4 style="font-size:14px;color:#8b1a2b;margin:12px 0 8px;">📋 後續安排</h4>
+      <div class="plan-items">
+        <span>✦</span>傳達心願、祈請護佑<br>
+        <span>✦</span>狐僊+月老共同加持<br>
+        <span>✦</span>連續1年每日祈福加持<br>
+        <span>✦</span>恭請狐僊娘娘加持個人魅力<br>
+        <span>✦</span>隨身攜帶、全年護佑
+      </div>
+
+      <p class="plan-desc">報名本場祈福儀式，可獲為期<strong>1年的長期敬奉</strong>資格，我們將在道場選定吉位，連續為您敬奉祈福。神龕為道場長期敬奉之所，沐受道場清靜福澤，祈願福源常伴護佑；<strong>桃花斗</strong>安奉於壇側，可登記您與伴侶的名諱，寓意護持身心安穩、遠離紛擾。另由<strong>道長專場主持祈福儀式</strong>，藉七夕吉慶時節點亮九盞祈福仙燈，助力個人氣質與人緣，廣結良緣貴人、諸事順遂。寄贈<strong>祈福壇牌</strong>（壇牌內有祈福文疏），便於隨身攜帶，伴您日常安穩順心。</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p style="text-align:center;font-size:15px;">🙏 以上方案費用請聯繫師兄了解具體詳情。</p>
+  </div>
+</section>
+
+<!-- 適合人群 -->
+<section>
+  <h2>👥 邊啲人適合參加？</h2>
+  <div class="suit-tags">
+    <span class="suit-tag">💕 單身想脫單</span>
+    <span class="suit-tag">💑 戀愛/已婚想穩定</span>
+    <span class="suit-tag">🔄 曾受情傷想重新出發</span>
+    <span class="suit-tag">🤝 做銷售/生意需人脈</span>
+    <span class="suit-tag">🎤 講師/主播/藝人提升魅力</span>
+    <span class="suit-tag">🙏 傳統道教文化愛好者</span>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <h2>❓ 常見問題</h2>
+
+  <div class="faq-q">男人能不能拜？還是只限女性？</div>
+  <div class="faq-a">男女均可。狐僊娘娘掌管世間人緣與魅力，男士求事業貴人、客源拓展，甚至改善家庭關係，都可以禮拜狐僊娘娘。龍虎山狐僊堂七百幾年歷史，香火旺盛。</div>
+
+  <div class="faq-q">單身/無明確感情需求，可以拜狐僊嗎？</div>
+  <div class="faq-a">完全可以。狐僊娘娘主人緣魅力，不限於姻緣。有助增進所有人際關係的和諧，幫助善信擴大社交圈、拓寬職場人脈、更容易遇見貴人。不論男女，只要事業需要人際往來，皆適合本次活動。</div>
+
+  <div class="faq-q">月老仙師嘅經典依據係咩？</div>
+  <div class="faq-a">道教有專門的《太上老君說月老仙師禳婚姻真經》流傳，經中記載月老「掌天下之婚牘，管人間之姻緣」，係正統道教認可嘅姻緣主神。</div>
+
+  <div class="faq-q">狐僊娘娘係道教正神嗎？會唔會越拜越偏？</div>
+  <div class="faq-a">據道家典籍記載，第三十代天師張繼先「虛靖天師」曾救下一隻受天雷之劫的孕狐，此後狐仙家族屢次報恩，助其化解瘟疫、旱災等危。狐僊娘娘在龍虎山狐僊堂受供奉，完完全全是道教正神。</div>
+
+  <div class="faq-q">做法事之後係咪一定即刻有效？</div>
+  <div class="faq-a">道教法會係「轉磁場、開緣路、減阻力」，並非強行改變他人意志或現實規律。法事幫你增魅增旺、增加良機，但最終仍需雙方嘅努力與緣分。我哋提供助力，唔會講假話。</div>
+</section>
+
+</div>
+
+<div class="cta-section">
+  <h2>🙏 有興趣了解更多？</h2>
+  <p>如想了解以上方案嘅具體費用與參與方式，<br>直接回覆我呢個訊息，我詳細同你介紹🙏</p>
+  <div class="btn">💬 回覆我了解更多</div>
+</div>
+
+<div class="footer">
+  楓燧堂 · 七夕良辰・雙壇祈福法會<br>
+  如有任何疑問，歡迎隨時查詢
+</div>
+
+</body>
+</html>

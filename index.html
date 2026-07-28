@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>楓燧堂 · 法會介紹</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Noto Sans HK", "PingFang HK", sans-serif;
+    background: #f5f0eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  h1 { font-size: 22px; color: #2d2a24; margin-bottom: 8px; }
+  p { font-size: 14px; color: #888; margin-bottom: 32px; }
+  .cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 600px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 24px;
+    width: 260px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+  }
+  .card:hover { transform: translateY(-4px); }
+  .card .emoji { font-size: 48px; display: block; margin-bottom: 12px; }
+  .card h2 { font-size: 18px; margin-bottom: 6px; }
+  .card .desc { font-size: 13px; color: #888; }
+  .card.pink { border-top: 4px solid #c9405a; }
+  .card.blue { border-top: 4px solid #2d4a6b; }
+  .card.gold { border-top: 4px solid #b8860b; background: linear-gradient(to bottom, #fffcf5, #fff); }
+  .card.purple { border-top: 4px solid #6a4a8e; background: linear-gradient(to bottom, #faf6ff, #fff); }
+  .contact-bar {
+    background: #2a2a2a;
+    padding: 12px 24px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+  .contact-bar a { color: #b8d5a8; text-decoration: none; }
+  .contact-bar .sep { margin: 0 8px; opacity: 0.4; }
+  body { padding-bottom: 60px; }
+</style>
+<script src="https://beacon.cdn.qq.com/sdk/4.5.9/beacon_web.min.js"></script>
+<script>
+(function(){
+  try{
+    var beacon=new BeaconAction({
+      appkey:'0WEB06U85YBSLJNL',
+      versionCode:'1.0.0',
+      channelID:'share',
+      delay:1000,
+      sessionDuration:30*60*1000,
+      isOversea:false,
+      needReportRqdEvent:false
+    });
+    beacon.onDirectUserAction('preview_page_view',{
+      'url':location.href,
+      'referrer':document.referrer,
+      'title':document.title,
+      'sandbox_id':'7794e67ce39e45beaaaa6759124dc2a7'
+    });
+  }catch(e){}
+})();
+</script></head>
+<body>
+  <h1>楓燧堂 · 法會介紹</h1>
+  <p>請選擇你想了解的法會</p>
+  <div class="cards">
+    <a class="card pink" href="七夕法會介紹.html">
+      <span class="emoji">🌙</span>
+      <h2>七夕良辰·雙壇祈福法會</h2>
+      <div class="desc">月老仙師 · 狐僊娘娘 · 合祀祈福</div>
+    </a>
+    <a class="card blue" href="中元法會介紹.html">
+      <span class="emoji">🪷</span>
+      <h2>中元水陸普渡法會</h2>
+      <div class="desc">三地合壇 · 冥陽兩利</div>
+    </a>
+    <a class="card purple" href="百解化煞介紹.html">
+      <span class="emoji">⚡</span>
+      <h2>百解化煞禳災祈福</h2>
+      <div class="desc">108道關煞 · 根源化解</div>
+    </a>
+  </div>
+  <div style="margin-top: 24px; font-size: 13px; color: #b8860b; cursor: pointer;" onclick="location.href='法會活動介紹_新版本.html'">
+    👉 試用新版（一頁過 · 更精簡）
+  </div>
+  <div style="margin-top: 12px; font-size: 13px; color: #6a4a8e; cursor: pointer;" onclick="location.href='全部法會一覽.html'">
+    📋 全部服務一覽（受生債 · 補財庫 · 手鏈 · 法會）
+  </div>
+
+<div class="contact-bar">
+  WhatsApp聯繫：<a href="https://wa.me/85247435153">+852 4743 5153</a>（山羽師兄）
+</div>
+
+</body>
+</html>
