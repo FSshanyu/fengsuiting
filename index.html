@@ -2,237 +2,63 @@
 <html lang="zh-HK">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>五行手鏈 · 專屬定制 · 楓燧堂</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>楓燧堂 · 法會介紹</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, "Noto Sans HK", "PingFang HK", sans-serif;
-    background: #f7f4ef;
-    color: #2d2a24;
-    font-size: 17px;
-    line-height: 1.9;
-  }
-
-  .hero {
-    background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 40%, #c9405a 70%, #e8a0b4 100%);
-    padding: 64px 24px 48px;
+    background: #f5f0eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
     text-align: center;
-    color: #fff;
   }
-  .hero h1 { font-size: 30px; font-weight: 800; letter-spacing: 3px; }
-  .hero .sub { font-size: 15px; opacity: 0.85; margin-top: 8px; max-width: 520px; margin: 10px auto 0; }
-  .hero .badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.15);
-    padding: 5px 16px;
-    border-radius: 20px;
-    font-size: 13px;
-    margin-top: 16px;
+  h1 { font-size: 22px; color: #2d2a24; margin-bottom: 8px; }
+  p { font-size: 14px; color: #888; margin-bottom: 32px; }
+  .cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 600px;
   }
-
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 24px;
+    width: 260px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+  }
+  .card:hover { transform: translateY(-4px); }
+  .card .emoji { font-size: 48px; display: block; margin-bottom: 12px; }
+  .card h2 { font-size: 18px; margin-bottom: 6px; }
+  .card .desc { font-size: 13px; color: #888; }
+  .card.pink { border-top: 4px solid #c9405a; }
+  .card.blue { border-top: 4px solid #2d4a6b; }
+  .card.gold { border-top: 4px solid #b8860b; background: linear-gradient(to bottom, #fffcf5, #fff); }
+  .card.purple { border-top: 4px solid #6a4a8e; background: linear-gradient(to bottom, #faf6ff, #fff); }
   .contact-bar {
-    background: #1a1a2e;
-    padding: 12px 20px;
+    background: #2a2a2a;
+    padding: 12px 24px;
     text-align: center;
     font-size: 13px;
     color: rgba(255,255,255,0.85);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
   }
-  .contact-bar a { color: #d5b8ff; text-decoration: none; }
+  .contact-bar a { color: #b8d5a8; text-decoration: none; }
   .contact-bar .sep { margin: 0 8px; opacity: 0.4; }
-
-  .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
-  section { padding: 40px 0; border-bottom: 1px solid #e5e0d8; }
-  section:last-of-type { border-bottom: none; }
-
-  h2 {
-    font-size: 22px;
-    font-weight: 700;
-    color: #2a2a4e;
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #c8c0d8;
-  }
-  h3 {
-    font-size: 17px;
-    font-weight: 600;
-    color: #4a2a4e;
-    margin: 20px 0 8px;
-  }
-  h4 { font-size: 15px; font-weight: 600; color: #3a2a4e; margin: 14px 0 6px; }
-  p { font-size: 16px; margin-bottom: 14px; color: #444; }
-
-  .highlight-box {
-    background: #f0eaf8;
-    border-left: 4px solid #6a4a8e;
-    padding: 16px 20px;
-    border-radius: 0 10px 10px 0;
-    margin: 16px 0;
-  }
-  .highlight-box p { margin-bottom: 4px; font-size: 14px; color: #3a2a4e; }
-
-  .concept-card {
-    background: #fff;
-    border-radius: 14px;
-    padding: 24px;
-    margin: 18px 0;
-    box-shadow: 0 2px 12px rgba(42,42,78,0.07);
-    border-left: 4px solid #6a4a8e;
-  }
-  .concept-card .cc-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #2a2a4e;
-    margin-bottom: 10px;
-  }
-  .concept-card p { font-size: 14px; color: #555; margin-bottom: 8px; }
-  .concept-card p:last-child { margin-bottom: 0; }
-
-  .direction-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    margin: 14px 0;
-  }
-  .direction-item {
-    background: #fff;
-    padding: 16px 12px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  }
-  .direction-item .d-icon { font-size: 24px; display: block; margin-bottom: 2px; }
-  .direction-item .d-name { font-weight: 600; color: #2a2a4e; font-size: 14px; margin-bottom: 2px; }
-  .direction-item .d-desc { font-size: 11px; color: #999; line-height: 1.4; }
-
-  .tier-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin: 16px 0;
-  }
-  .tier-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 18px 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    text-align: center;
-  }
-  .tier-card .t-name { font-size: 16px; font-weight: 700; color: #2a2a4e; }
-  .tier-card .t-price { font-size: 14px; color: #c9405a; font-weight: 600; margin: 4px 0; }
-  .tier-card .t-materials { font-size: 12px; color: #888; line-height: 1.6; }
-  .tier-card .t-info { font-size: 12px; color: #4a2a6e; font-weight: 500; margin-top: 4px; line-height: 1.4; }
-  .tier-card .t-info-ash { font-size: 12px; color: #c9405a; font-weight: 600; margin-top: 2px; }
-  .tier-card .t-info-bonus { font-size: 12px; color: #2a6a4a; font-weight: 500; margin-top: 2px; }
-  .tier-card.featured {
-    border: 2px solid #c9405a;
-    position: relative;
-  }
-  .tier-card.featured::after {
-    content: '✨ 人氣之選';
-    position: absolute;
-    top: -10px;
-    right: 10px;
-    background: #c9405a;
-    color: #fff;
-    font-size: 10px;
-    padding: 2px 8px;
-    border-radius: 8px;
-  }
-
-  .benefit-box {
-    background: #fff;
-    border-radius: 12px;
-    padding: 18px 20px;
-    margin: 14px 0;
-    border-left: 4px solid #6a4a8e;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
-  .benefit-box .b-head { font-size: 15px; font-weight: 700; color: #2a2a4e; margin-bottom: 6px; }
-  .benefit-box .b-head span { margin-right: 6px; }
-  .benefit-box .b-effect { font-size: 14px; color: #2d2a24; margin-bottom: 6px; font-weight: 500; }
-  .benefit-box .b-how { font-size: 13px; color: #888; margin-bottom: 0; }
-
-  .step-list {
-    list-style: none;
-    padding: 0;
-    margin: 14px 0;
-  }
-  .step-list li {
-    padding: 10px 0 10px 28px;
-    border-left: 2px solid #6a4a8e;
-    position: relative;
-    font-size: 14px;
-    color: #555;
-  }
-  .step-list li::before {
-    content: '';
-    position: absolute;
-    left: -5px; top: 16px;
-    width: 8px; height: 8px;
-    background: #6a4a8e;
-    border-radius: 50%;
-  }
-  .step-list li strong { color: #2d2a24; }
-
-  .suit-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin: 14px 0;
-  }
-  .suit-item {
-    background: #fff;
-    padding: 14px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 13px;
-    color: #555;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  }
-  .suit-item .s-icon { font-size: 22px; display: block; margin-bottom: 4px; }
-
-  .faq-q {
-    font-weight: 600;
-    color: #2a2a4e;
-    font-size: 15px;
-    margin: 18px 0 6px;
-  }
-  .faq-a {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 12px;
-  }
-
-  .cta-section {
-    background: linear-gradient(135deg, #1a1a2e, #4a2a6e);
-    margin: 0 -20px;
-    padding: 48px 24px;
-    text-align: center;
-    color: #fff;
-  }
-  .cta-section h2 { color: #fff; border-bottom: none; font-size: 22px; }
-  .cta-section p { color: rgba(255,255,255,0.9); font-size: 15px; }
-  .cta-section .btn {
-    display: inline-block;
-    background: #fff;
-    color: #1a1a2e;
-    padding: 14px 44px;
-    border-radius: 50px;
-    font-size: 17px;
-    font-weight: 700;
-    text-decoration: none;
-    margin-top: 20px;
-  }
-
-  .footer { text-align: center; padding: 24px 20px; font-size: 12px; color: #aaa; }
-
-  @media (max-width: 480px) {
-    .hero h1 { font-size: 24px; }
-    .direction-grid { grid-template-columns: 1fr 1fr; }
-    .tier-grid { grid-template-columns: 1fr; }
-    .suit-list { grid-template-columns: 1fr; }
-  }
+  body { padding-bottom: 60px; }
 </style>
 <script src="https://beacon.cdn.qq.com/sdk/4.5.9/beacon_web.min.js"></script>
 <script>
@@ -251,214 +77,37 @@
       'url':location.href,
       'referrer':document.referrer,
       'title':document.title,
-      'sandbox_id':'5b62cb0a1a414b8ba758a228a37a9ec7'
+      'sandbox_id':'1dfa6e7322894546af85e6d8791ff365'
     });
   }catch(e){}
 })();
 </script></head>
 <body>
-
-<div class="hero">
-  <h1>五行手鏈 · 專屬定制</h1>
-  <div class="sub">根據你嘅生辰八字，由師兄團隊一對一精心定制——補五行缺失，調個人磁場</div>
-  <div class="badge">🎋 靈息香灰珠 · 聖地香火加持</div>
-</div>
+  <h1>楓燧堂 · 法會介紹</h1>
+  <p>請選擇你想了解的法會</p>
+  <div class="cards">
+    <a class="card pink" href="七夕法會介紹.html">
+      <span class="emoji">🌙</span>
+      <h2>七夕良辰·雙壇祈福法會</h2>
+      <div class="desc">月老仙師 · 狐僊娘娘 · 合祀祈福</div>
+    </a>
+    <a class="card blue" href="中元法會介紹.html">
+      <span class="emoji">🪷</span>
+      <h2>中元水陸普渡法會</h2>
+      <div class="desc">三地合壇 · 冥陽兩利</div>
+    </a>
+    <a class="card purple" href="百解化煞介紹.html">
+      <span class="emoji">⚡</span>
+      <h2>百解化煞禳災祈福</h2>
+      <div class="desc">108道關煞 · 根源化解</div>
+    </a>
+  </div>
+  <div style="margin-top: 12px; font-size: 13px; color: #6a4a8e; cursor: pointer;" onclick="location.href='全部法會一覽.html'">
+    📋 全部服務一覽（受生債 · 補財庫 · 手鏈 · 法會）
+  </div>
 
 <div class="contact-bar">
-  📲 用WhatsApp聯繫：<a href="https://wa.me/85247435153">+852 4743 5153</a>（山羽師兄）
-</div>
-
-<div class="container">
-
-<!-- ===== 一、產品概念 ===== -->
-<section>
-  <h2>📿 五行手鏈係咩？</h2>
-  <p>我哋嘅五行手鏈唔係市面上嗰啲批量生產嘅飾品，而係根據你個人嘅八字專屬定製。</p>
-  <p>由高功道長親算你嘅五行旺弱、命盤格局、三格九宮，再揀選最適合你嘅水晶材質同陣法配置，進行組合排列。每款手鏈都係根據你嘅生辰八字，專門選取適合你命盤嘅水晶寶石，由師兄一筆一劃手稿設計——<strong>唔係工廠批量生產，係你專屬嘅私人定制</strong>。</p>
-
-  <h3>開光祈福流程</h3>
-  <p>手鏈做好之後，會送到道觀，由道長喺吉日進行完整嘅開光祈福儀式——包括誦讀經文、硃砂點靈、虛空結界、過香火加持。</p>
-  <p>成個流程落嚟，手鏈唔再係普通飾品，而係同你八字呼應嘅專屬能量載體，成為你隨身嘅「私人能量管家」，日日陪伴你調理氣場。</p>
-
-  <div class="highlight-box">
-    <p><strong>定制唔同於其他——獨一無二。</strong> 每個人生辰唔一樣，五行強弱各有差異，無法批量生產，只能一道道工序打磨，逐步調理個人磁場。</p>
-  </div>
-
-  <h3>靈息香灰珠加持</h3>
-  <p>值得一提嘅係，興旺款或以上嘅手鏈，會特別加入「靈息香灰珠」。呢粒珠取材自知名道觀常年供奉嘅香灰——唔單止有千百年嚟善信嘅祈福香火，仲有道長專門為道觀各大神明供奉嘅專屬香火，能量非常純淨。</p>
-  <p>香灰珠嘅製作工藝好複雜，每一粒都獨一無二，會嚴格按你嘅命盤同心願進行搭配，同五行能量互相呼應。呢份專屬能量，係工廠批量貨比唔到嘅。</p>
-
-  <h3>交付流程</h3>
-  <p>成個過程由定制到開光完成，大概需要15至20個工作日。定制好之後，師兄會發圖俾你確認款式，冇問題就安排祈福。祈福過程會完整錄影，之後你可以睇返條片，確認道長係親手幫你開光嘅。</p>
-</section>
-
-<!-- ===== 二、九大增旺方向 ===== -->
-<section>
-  <h2>🎯 九大增旺方向</h2>
-  <p>五行手鏈可以根據你嘅需求，針對性調理以下方面。你可以睇下自己最想改善邊幾個：</p>
-  <div class="direction-grid">
-    <div class="direction-item"><span class="d-icon">💼</span><div class="d-name">事業</div><div class="d-desc">主正、副業，升職加薪</div></div>
-    <div class="direction-item"><span class="d-icon">💰</span><div class="d-name">財運</div><div class="d-desc">主正、偏財，財源滾滾</div></div>
-    <div class="direction-item"><span class="d-icon">🤝</span><div class="d-name">貴人</div><div class="d-desc">化除是非，貴人扶持</div></div>
-    <div class="direction-item"><span class="d-icon">💕</span><div class="d-name">婚緣</div><div class="d-desc">正緣早尋，姻緣相合</div></div>
-    <div class="direction-item"><span class="d-icon">📚</span><div class="d-name">文昌</div><div class="d-desc">金榜題名，步步高昇</div></div>
-    <div class="direction-item"><span class="d-icon">💪</span><div class="d-name">健康</div><div class="d-desc">身清氣爽，出入平安</div></div>
-    <div class="direction-item"><span class="d-icon">🛡️</span><div class="d-name">平安</div><div class="d-desc">遇難成祥，安康如意</div></div>
-    <div class="direction-item"><span class="d-icon">👶</span><div class="d-name">子女</div><div class="d-desc">福蔭壽全，開枝散葉</div></div>
-    <div class="direction-item"><span class="d-icon">👨‍👩‍👧‍👦</span><div class="d-name">親緣</div><div class="d-desc">家庭和諧，闔家興旺</div></div>
-  </div>
-  <p>每款手鏈對應嘅增旺範圍唔同，師兄會根據你揀嘅方向同命盤情況，挑選最適合嘅水晶材質同陣法排列。</p>
-</section>
-
-<!-- ===== 三、五款級別 ===== -->
-<section>
-  <h2>💎 五款級別選擇</h2>
-  <p>由基礎到頂級，每款嘅材質同調理範圍都唔同。尊享款以上可額外獲得師兄詳細命盤分析：</p>
-  <div class="tier-grid">
-    <div class="tier-card">
-      <div class="t-name">好運款</div>
-      <div class="t-materials">發晶 · 瑪瑙 · 玉石 · 銀飾</div>
-      <div class="t-info">✦ 專注改善 1 個方面，門檻最低</div>
-    </div>
-    <div class="tier-card">
-      <div class="t-name">興旺款</div>
-      <div class="t-materials">發晶 · 珍珠 · 玉石 · 銀飾</div>
-      <div class="t-info">✦ 調理 2 個方面，入門之選</div>
-      <div class="t-info-ash">🔥 含靈息香灰珠</div>
-    </div>
-    <div class="tier-card featured">
-      <div class="t-name">強旺款</div>
-      <div class="t-materials">發晶 · 珍珠 · 玉石 · K金 · 蜜蠟 · 朱砂</div>
-      <div class="t-info">✦ 調理 3 個方面，更全面</div>
-      <div class="t-info-ash">🔥 含靈息香灰珠</div>
-    </div>
-    <div class="tier-card">
-      <div class="t-name">尊享款</div>
-      <div class="t-materials">發晶 · 珍珠 · 蜜蠟 · 朱砂 · 班彩石 · 翡翠 · 純金</div>
-      <div class="t-info">✦ 調理 6 個方面（事業、財運、貴人、健康、姻緣、文昌）</div>
-      <div class="t-info-ash">🔥 含靈息香灰珠</div>
-      <div class="t-info-bonus">📋 含師兄詳細命盤分析</div>
-    </div>
-    <div class="tier-card" style="grid-column: 1 / -1; max-width: 320px; margin: 0 auto;">
-      <div class="t-name">至尊款</div>
-      <div class="t-materials">頂級材質 · 全套陣法 · 深度命盤分析</div>
-      <div class="t-info">✦ 涵蓋 9 個方面（事業、財運、貴人、婚緣、文昌、健康、平安、子女、親緣）</div>
-      <div class="t-info-ash">🔥 含靈息香灰珠</div>
-      <div class="t-info-bonus">📋 含師兄詳細命盤分析</div>
-    </div>
-  </div>
-  <div class="highlight-box">
-    <p>💡 級別越高，調理方面越全面。尊享款或以上會包含師兄詳細命盤分析，幫你更清晰了解自身運勢走向。如果你有3個或以上方面想改善，建議由強旺款起跳。</p>
-  </div>
-</section>
-
-<!-- ===== 三、靈息香灰珠 ===== -->
-<section>
-  <h2>✨ 靈息香灰珠加持</h2>
-  <div class="concept-card">
-    <div class="cc-title">🔥 來自聖地香火嘅能量</div>
-    <p>靈息香灰珠嘅香灰，全部取自知名道觀——唔單止有常年往來善信嘅祈福香火，仲有道長專門供奉神明嘅專屬香火。多重靈力匯聚，福澤更深。</p>
-    <p>香灰嘅根，源自千年香火氣，蘊含着千萬善信叩拜時嘅祈願餘温。道教中，香灰一直被視為同神明鏈接嘅「信物」，亦係驅走晦氣嘅「保護符」。</p>
-  </div>
-
-  <h3>加咗香灰珠嘅手鏈有咩特別？</h3>
-  <div class="benefit-box">
-    <div class="b-head"><span>🔑</span>香灰珠對你有咩用？</div>
-    <div class="b-effect">👉 五行手鏈本身已能調和五行，加上香灰珠之後，等於多咗一份來自聖地嘅能量加持——香灰珠有「壓邪祟、鎮霉運」嘅屬性，能淨化負能、強化磁場，幫助你嘅願望更快被神明接收到。</div>
-    <div class="b-how">香灰珠全手工燒製，每顆都講究火候同時間，產量極低——每月淨得100顆，因此每月僅開放50個免費加串名額。</div>
-  </div>
-
-  <div class="highlight-box">
-    <p>🎁 <strong>免費加串優惠：</strong> 結緣興旺款或以上（興旺、強旺、尊享、至尊），即可免費加串兩顆靈息香灰珠。每月僅限50個名額，額滿即止。</p>
-  </div>
-
-  <h3>邊啲人適合戴五行香灰手鏈？</h3>
-  <div class="suit-list">
-    <div class="suit-item"><span class="s-icon">💼</span>事業財運提升</div>
-    <div class="suit-item"><span class="s-icon">💕</span>姻緣人氣提升</div>
-    <div class="suit-item"><span class="s-icon">🛡️</span>求平安避是非</div>
-    <div class="suit-item"><span class="s-icon">🌟</span>達強願轉運勢</div>
-    <div class="suit-item"><span class="s-icon">🤝</span>貴人人脈拓展</div>
-    <div class="suit-item"><span class="s-icon">📚</span>學業考運提升</div>
-    <div class="suit-item"><span class="s-icon">🏠</span>家庭親情和諧</div>
-    <div class="suit-item"><span class="s-icon">💡</span>創作靈感啟發</div>
-  </div>
-</section>
-
-<!-- ===== 四、定制流程 ===== -->
-<section>
-  <h2>📋 定制流程</h2>
-  <ul class="step-list">
-    <li><strong>① 提交資料</strong> — 提供姓名、性別、出生年月日時、所在地，師兄幫你排盤分析</li>
-    <li><strong>② 高功道長親算</strong> — 道長根據你嘅八字，精算五行旺弱、命盤格局、三格九宮</li>
-    <li><strong>③ 挑選材質陣法</strong> — 按你嘅五行喜用同所求方向，揀選最適合嘅水晶材料同陣法配置</li>
-    <li><strong>④ 手稿設計</strong> — 師兄一筆一劃設計專屬陣法排列，確保五行能量流通</li>
-    <li><strong>⑤ 道觀開光祈福</strong> — 手鏈送到道觀，由道長喺吉日進行誦讀經文、硃砂點靈、虛空結界、過香火加持</li>
-    <li><strong>⑥ 確認款式</strong> — 師兄發圖俾你確認款式，冇問題就安排最終祈福</li>
-    <li><strong>⑦ 寄送到手</strong> — 完成後快遞到你手中，隨附佩戴方法同注意事項；祈福全程錄影可供查閱</li>
-  </ul>
-  <p>整個過程由定制到開光完成，大概需要15至20個工作日。你唔使親自到場，師兄會全程為你跟進安排。</p>
-</section>
-
-<!-- ===== 五、佩戴須知 ===== -->
-<section>
-  <h2>📖 佩戴方法與注意事項</h2>
-  <div class="benefit-box">
-    <div class="b-head"><span>🕐</span>初次佩戴</div>
-    <div class="b-effect">👉 需要喺吉時吉日佩戴啟用。到手之後，對住手鏈吹一口真氣（叫「服氣」），然後戴上，正式啟用。</div>
-  </div>
-  <div class="benefit-box">
-    <div class="b-head"><span>✅</span>日常佩戴</div>
-    <div class="b-effect">👉 可長期佩戴，能量會一直喺度。唔方便戴嗰陣可以放喺随身袋、床頭或辦公枱上，功效一樣。</div>
-  </div>
-  <div class="benefit-box">
-    <div class="b-head"><span>⚠️</span>注意事項</div>
-    <div class="b-effect">
-      👉 忌污穢——去完醫院或白事後最好除低放入袋<br>
-      👉 避免接觸洗滌劑、香水等化學品<br>
-      👉 房事時除低<br>
-      👉 唔好俾他人隨意把玩<br>
-      👉 劇烈運動前最好除低<br>
-      👉 唔戴嗰陣用紅布包好存放<br>
-      👉 如沾污穢，可放上午日光下照射30分鐘消磁
-    </div>
-  </div>
-</section>
-
-<!-- ===== 六、常見問題 ===== -->
-<section>
-  <h2>❓ 常見問題</h2>
-
-  <div class="faq-q">問：手鏈可以一直佩戴嗎？</div>
-  <div class="faq-a">可以。每條手鏈都係師兄根據你嘅生辰專門選取陣法排列，定制過程中已誦讀疏文祈福。只要正常保養，能量會一直都在，可以長期佩戴。</div>
-
-  <div class="faq-q">問：戴咗幾時會感受到效果？</div>
-  <div class="faq-a">好多緣主在數月內感受到調理好嘅喜悅，亦有客戶數周內打開咗困局，但每個人情況唔同。手鏈係輔助你調理磁場，配合你自身嘅努力同積極心態，效果會更明顯。</div>
-
-  <div class="faq-q">問：點解要揀興旺款或以上先有香灰珠？</div>
-  <div class="faq-a">因為香灰珠匯聚嘅香火靈氣同福澤能量比較強，更適合有強願想要達成嘅緣主。每月淨係為定制興旺、強旺、尊享、至尊呢四款嘅緣主開放50個免費加串名額，確保每條手鏈嘅能量夠集中、夠精準。</div>
-
-  <div class="faq-q">問：香灰珠嘅香灰係咪乾淨嘅？會唔會有雜念？</div>
-  <div class="faq-a">完全可以放心。香灰全部取自知名道觀，係常年往來善信嘅祈福香火，同埋道長專門供奉神明嘅專屬香火——所包含嘅唔係雜念，而係匯聚咗萬人願力正能量同神明靈力，係五行調運嘅「能量助力」，只會幫你淨化負面干擾。</div>
-
-  <div class="faq-q">問：之前喺楓燧堂請過手鏈，可以加香灰珠嗎？</div>
-  <div class="faq-a">如果你之前結緣嘅係興旺、強旺、尊享、至尊款，可以獲得加串名額，仲會贈送串珠工具包。如果係基礎或好運款，可以補差價升級做以上四款其中一款，就可以加香灰珠。</div>
-
-  <div class="faq-q">問：手鏈要點樣保養？</div>
-  <div class="faq-a">避免碰撞摔壓，唔好接觸化學品。可定期放上午陽光下照射30分鐘消磁淨化。唔佩戴時用紅布包好存放於乾淨處。佩戴首21日盡量避免動氣吵架，亦盡量唔好食狗、牛、黑魚、大雁四種動物。</div>
-</section>
-
-</div>
-
-<div class="cta-section">
-  <h2>🙏 想知道自己適合戴咩手鏈？</h2>
-  <p>你可以send你嘅出生年月日時俾我，<br>我幫你免費睇下八字五行情況，推薦最適合你嘅款式。</p>
-  <div class="btn">💬 回覆我查詢</div>
-</div>
-
-<div class="footer">
-  楓燧堂 · 五行手鏈專屬定制<br>
-  如有任何疑問，歡迎隨時查詢
+  WhatsApp聯繫：<a href="https://wa.me/85247435153">+852 4743 5153</a>（山羽師兄）
 </div>
 
 </body>
